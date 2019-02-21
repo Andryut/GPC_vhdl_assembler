@@ -1,0 +1,22 @@
+.data
+name initial_value(0-255)
+
+.references
+name step_referenced(0-n); n is the position of the halt(final) instruction.
+
+.code
+instruction_name operand_name
+
+
+loadA 0000
+storeA 0001
+addA 0010
+subA 0011
+inA 0100
+outA 0101
+jpos 0110
+jneg 0111
+jz 1000
+jnz 1001
+jmp 1010
+halt 1011

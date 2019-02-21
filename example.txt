@@ -1,0 +1,29 @@
+.data
+X
+Y
+Z
+cero 0
+cinco 5
+
+.references
+End_if 15
+
+.code
+inA
+storeA X
+inA
+storeA Y
+loadA cero
+storeA Z
+loadA X
+subA Y
+jneg End_if
+jz End_if
+loadA X
+addA Y
+storeA Z
+addA cinco
+storeA Z
+loadA Z
+outA
+halt

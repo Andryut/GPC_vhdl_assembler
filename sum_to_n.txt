@@ -1,0 +1,28 @@
+.data
+sum
+N
+cero 0
+uno 1
+
+.references
+initw 4
+endw 14
+
+.code
+loadA cero
+storeA sum
+inA
+storeA N
+loadA N
+jneg endw
+jz endw
+loadA sum
+addA N
+storeA sum
+loadA N
+subA uno
+storeA N
+jmp initw
+loadA sum
+outA
+halt

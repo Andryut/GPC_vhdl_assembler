@@ -142,7 +142,7 @@ int main(int argc, char** argv) {
             }
             if(line == ".code") {
                 cout << "parsing code\n";
-                while(line != ""){
+                while(!programFile.eof()){
                     getline(programFile, line);
                     if(line != "")
                         configureProgram(&instructions, tokenize(line));

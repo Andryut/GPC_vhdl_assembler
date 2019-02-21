@@ -8,15 +8,15 @@ name step_referenced(0-n); n is the position of the halt(final) instruction.
 instruction_name operand_name
 
 
-loadA 0000
-storeA 0001
-addA 0010
-subA 0011
-inA 0100
-outA 0101
-jpos 0110
-jneg 0111
-jz 1000
-jnz 1001
-jmp 1010
-halt 1011
+loadA 0
+storeA 1
+addA 2
+subA 3
+inA 4
+outA 5
+jpos 6
+jneg 7
+jz 8
+jnz 9
+jmp A
+halt B

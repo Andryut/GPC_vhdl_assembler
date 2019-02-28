@@ -1,0 +1,49 @@
+.data
+X
+Y
+Z
+cuatro 4
+uno 1
+trece 13
+cinco 5
+dos 2
+
+.references
+while 6
+endwhile 17
+else 24
+endif 27
+
+.code
+inA
+storeA X
+inA
+storeA Y
+inA
+storeA Z
+loadA X
+subA cuatro
+jpos endwhile
+jz endwhile
+loadA Z
+addA Y
+storeA Z
+loadA X
+addA uno
+storeA X
+jmp while
+loadA Z
+subA trece
+jneg else
+loadA Z
+subA dos
+storeA Y
+jmp endif
+loadA Z
+addA cinco
+storeA Y
+loadA Z
+outA
+loadA Y
+outA
+halt

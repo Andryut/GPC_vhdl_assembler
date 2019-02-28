@@ -1,0 +1,764 @@
+Release 9.2i Map J.36
+Xilinx Mapping Report File for Design 'schematic'
+
+Design Information
+------------------
+Command Line   : C:\Xilinx92i\bin\nt\map.exe -ise
+C:/Users/Andre/Desktop/carpeta_arquitectura/Assembler_arch/gpc/gpc.ise -intstyle
+ise -p xc3s250e-vq100-4 -cm area -pr b -k 4 -c 100 -o schematic_map.ncd
+schematic.ngd schematic.pcf 
+Target Device  : xc3s250e
+Target Package : vq100
+Target Speed   : -4
+Mapper Version : spartan3e -- $Revision: 1.36 $
+Mapped Date    : Thu Feb 28 11:35:24 2019
+
+Design Summary
+--------------
+Number of errors:      0
+Number of warnings:    3
+Logic Utilization:
+  Number of Slice Flip Flops:          25 out of   4,896    1%
+  Number of 4 input LUTs:               1 out of   4,896    1%
+Logic Distribution:
+  Number of occupied Slices:                           13 out of   2,448    1%
+    Number of Slices containing only related logic:      13 out of      13  100%
+    Number of Slices containing unrelated logic:          0 out of      13    0%
+      *See NOTES below for an explanation of the effects of unrelated logic
+Total Number of 4 input LUTs:             25 out of   4,896    1%
+  Number used as logic:                  1
+  Number used as a route-thru:          24
+  Number of bonded IOBs:               24 out of      66   36%
+  Number of GCLKs:                     1 out of      24    4%
+
+Total equivalent gate count for design:  353
+Additional JTAG gate count for IOBs:  1,152
+Peak Memory Usage:  219 MB
+Total REAL time to MAP completion:  7 secs 
+Total CPU time to MAP completion:   1 secs 
+
+NOTES:
+
+   Related logic is defined as being logic that shares connectivity - e.g. two
+   LUTs are "related" if they share common inputs.  When assembling slices,
+   Map gives priority to combine logic that is related.  Doing so results in
+   the best timing performance.
+
+   Unrelated logic shares no connectivity.  Map will only begin packing
+   unrelated logic into a slice once 99% of the slices are occupied through
+   related logic packing.
+
+   Note that once logic distribution reaches the 99% level through related
+   logic packing, this does not mean the device is completely utilized.
+   Unrelated logic packing will then begin, continuing until all usable LUTs
+   and FFs are occupied.  Depending on your timing budget, increased levels of
+   unrelated logic packing may adversely affect the overall timing performance
+   of your design.
+
+Table of Contents
+-----------------
+Section 1 - Errors
+Section 2 - Warnings
+Section 3 - Informational
+Section 4 - Removed Logic Summary
+Section 5 - Removed Logic
+Section 6 - IOB Properties
+Section 7 - RPMs
+Section 8 - Guide Report
+Section 9 - Area Group and Partition Summary
+Section 10 - Modular Design Summary
+Section 11 - Timing Report
+Section 12 - Configuration String Information
+Section 13 - Control Set Information
+
+Section 1 - Errors
+------------------
+
+Section 2 - Warnings
+--------------------
+WARNING:LIT:243 - Logical network N4 has no load.
+WARNING:LIT:395 - The above warning message base_net_load_rule is repeated 5
+   more times for the following (max. 5 shown):
+   Din<3>,
+   Din<2>,
+   Din<1>,
+   Din<0>,
+   XLXI_1/y
+   To see the details of these warning messages, please use the -detail switch.
+WARNING:MapLib:701 - Signal go connected to top level port go has been removed.
+
+Section 3 - Informational
+-------------------------
+INFO:MapLib:562 - No environment variables are currently set.
+INFO:MapLib:863 - The following Virtex BUFG(s) is/are being retargeted to
+   Virtex2 BUFGMUX(s) with input tied to I0 and Select pin tied to constant 0:
+   BUFGP symbol "mainClk_BUFGP" (output signal=mainClk_BUFGP)
+INFO:MapLib:159 - Net Timing constraints on signal mainClk are pushed forward
+   through input buffer.
+INFO:LIT:244 - All of the single ended outputs in this design are using slew
+   rate limited output drivers. The delay on speed critical single ended outputs
+   can be dramatically reduced by designating them as fast outputs in the
+   schematic.
+
+Section 4 - Removed Logic Summary
+---------------------------------
+ 261 block(s) removed
+   3 block(s) optimized away
+ 261 signal(s) removed
+
+Section 5 - Removed Logic
+-------------------------
+
+The trimmed logic report below shows the logic removed from your design due to
+sourceless or loadless signals, and VCC or ground connections.  If the removal
+of a signal or symbol results in the subsequent removal of an additional signal
+or symbol, the message explaining that second removal will be indented.  This
+indentation will be repeated as a chain of related logic is removed.
+
+To quickly locate the original cause for the removal of a chain of logic, look
+above the place where that logic is listed in the trimming report, then locate
+the lines that are least indented (begin at the leftmost edge).
+
+The signal "N4" is loadless and has been removed.
+ Loadless block "XST_VCC" (ONE) removed.
+The signal "XLXI_1/y" is sourceless and has been removed.
+The signal "XLXI_1/N0" is sourceless and has been removed.
+ Sourceless block "XLXI_1/Msub_State_0_addsub0000_cy<0>" (MUX) removed.
+  The signal "XLXI_1/Msub_State_0_addsub0000_cy<0>" is sourceless and has been
+removed.
+   Sourceless block "XLXI_1/Msub_State_0_addsub0000_cy<1>" (MUX) removed.
+    The signal "XLXI_1/Msub_State_0_addsub0000_cy<1>" is sourceless and has been
+removed.
+     Sourceless block "XLXI_1/Msub_State_0_addsub0000_cy<2>" (MUX) removed.
+      The signal "XLXI_1/Msub_State_0_addsub0000_cy<2>" is sourceless and has been
+removed.
+       Sourceless block "XLXI_1/Msub_State_0_addsub0000_cy<3>" (MUX) removed.
+        The signal "XLXI_1/Msub_State_0_addsub0000_cy<3>" is sourceless and has been
+removed.
+         Sourceless block "XLXI_1/Msub_State_0_addsub0000_cy<4>" (MUX) removed.
+          The signal "XLXI_1/Msub_State_0_addsub0000_cy<4>" is sourceless and has been
+removed.
+           Sourceless block "XLXI_1/Msub_State_0_addsub0000_cy<5>" (MUX) removed.
+            The signal "XLXI_1/Msub_State_0_addsub0000_cy<5>" is sourceless and has been
+removed.
+             Sourceless block "XLXI_1/Msub_State_0_addsub0000_cy<6>" (MUX) removed.
+              The signal "XLXI_1/Msub_State_0_addsub0000_cy<6>" is sourceless and has been
+removed.
+               Sourceless block "XLXI_1/Msub_State_0_addsub0000_cy<7>" (MUX) removed.
+                The signal "XLXI_1/Msub_State_0_addsub0000_cy<7>" is sourceless and has been
+removed.
+                 Sourceless block "XLXI_1/Msub_State_0_addsub0000_cy<8>" (MUX) removed.
+                  The signal "XLXI_1/Msub_State_0_addsub0000_cy<8>" is sourceless and has been
+removed.
+                   Sourceless block "XLXI_1/Msub_State_0_addsub0000_cy<9>" (MUX) removed.
+                    The signal "XLXI_1/Msub_State_0_addsub0000_cy<9>" is sourceless and has been
+removed.
+                     Sourceless block "XLXI_1/Msub_State_0_addsub0000_cy<10>" (MUX) removed.
+                      The signal "XLXI_1/Msub_State_0_addsub0000_cy<10>" is sourceless and has been
+removed.
+                       Sourceless block "XLXI_1/Msub_State_0_addsub0000_cy<11>" (MUX) removed.
+                        The signal "XLXI_1/Msub_State_0_addsub0000_cy<11>" is sourceless and has been
+removed.
+                         Sourceless block "XLXI_1/Msub_State_0_addsub0000_cy<12>" (MUX) removed.
+                          The signal "XLXI_1/Msub_State_0_addsub0000_cy<12>" is sourceless and has been
+removed.
+                           Sourceless block "XLXI_1/Msub_State_0_addsub0000_cy<13>" (MUX) removed.
+                            The signal "XLXI_1/Msub_State_0_addsub0000_cy<13>" is sourceless and has been
+removed.
+                             Sourceless block "XLXI_1/Msub_State_0_addsub0000_cy<14>" (MUX) removed.
+                              The signal "XLXI_1/Msub_State_0_addsub0000_cy<14>" is sourceless and has been
+removed.
+                               Sourceless block "XLXI_1/Msub_State_0_addsub0000_cy<15>" (MUX) removed.
+                                The signal "XLXI_1/Msub_State_0_addsub0000_cy<15>" is sourceless and has been
+removed.
+                                 Sourceless block "XLXI_1/Msub_State_0_addsub0000_cy<16>" (MUX) removed.
+                                  The signal "XLXI_1/Msub_State_0_addsub0000_cy<16>" is sourceless and has been
+removed.
+                                   Sourceless block "XLXI_1/Msub_State_0_addsub0000_cy<17>" (MUX) removed.
+                                    The signal "XLXI_1/Msub_State_0_addsub0000_cy<17>" is sourceless and has been
+removed.
+                                     Sourceless block "XLXI_1/Msub_State_0_addsub0000_cy<18>" (MUX) removed.
+                                      The signal "XLXI_1/Msub_State_0_addsub0000_cy<18>" is sourceless and has been
+removed.
+                                       Sourceless block "XLXI_1/Msub_State_0_addsub0000_cy<19>" (MUX) removed.
+                                        The signal "XLXI_1/Msub_State_0_addsub0000_cy<19>" is sourceless and has been
+removed.
+                                         Sourceless block "XLXI_1/Msub_State_0_addsub0000_cy<20>" (MUX) removed.
+                                          The signal "XLXI_1/Msub_State_0_addsub0000_cy<20>" is sourceless and has been
+removed.
+                                           Sourceless block "XLXI_1/Msub_State_0_addsub0000_cy<21>" (MUX) removed.
+                                            The signal "XLXI_1/Msub_State_0_addsub0000_cy<21>" is sourceless and has been
+removed.
+                                             Sourceless block "XLXI_1/Msub_State_0_addsub0000_cy<22>" (MUX) removed.
+                                              The signal "XLXI_1/Msub_State_0_addsub0000_cy<22>" is sourceless and has been
+removed.
+                                               Sourceless block "XLXI_1/Msub_State_0_addsub0000_cy<23>" (MUX) removed.
+                                                The signal "XLXI_1/Msub_State_0_addsub0000_cy<23>" is sourceless and has been
+removed.
+                                                 Sourceless block "XLXI_1/Msub_State_0_addsub0000_cy<24>" (MUX) removed.
+*The signal "XLXI_1/Msub_State_0_addsub0000_cy<24>" is sourceless and has been
+removed.
+* Sourceless block "XLXI_1/Msub_State_0_addsub0000_cy<25>" (MUX) removed.
+*  The signal "XLXI_1/Msub_State_0_addsub0000_cy<25>" is sourceless and has been
+removed.
+*   Sourceless block "XLXI_1/Msub_State_0_addsub0000_cy<26>" (MUX) removed.
+*    The signal "XLXI_1/Msub_State_0_addsub0000_cy<26>" is sourceless and has been
+removed.
+*     Sourceless block "XLXI_1/Msub_State_0_addsub0000_cy<27>" (MUX) removed.
+*      The signal "XLXI_1/Msub_State_0_addsub0000_cy<27>" is sourceless and has been
+removed.
+*       Sourceless block "XLXI_1/Msub_State_0_addsub0000_cy<28>" (MUX) removed.
+*        The signal "XLXI_1/Msub_State_0_addsub0000_cy<28>" is sourceless and has been
+removed.
+*         Sourceless block "XLXI_1/Msub_State_0_addsub0000_cy<29>" (MUX) removed.
+*          The signal "XLXI_1/Msub_State_0_addsub0000_cy<29>" is sourceless and has been
+removed.
+*           Sourceless block "XLXI_1/Msub_State_0_addsub0000_cy<30>" (MUX) removed.
+*            The signal "XLXI_1/Msub_State_0_addsub0000_cy<30>" is sourceless and has been
+removed.
+*             Sourceless block "XLXI_1/Msub_State_0_addsub0000_xor<31>" (XOR) removed.
+*              The signal "XLXI_1/State_0_addsub0000<31>" is sourceless and has been removed.
+*               Sourceless block "XLXI_1/State_0_not000197" (ROM) removed.
+*                The signal "XLXI_1/State_0_not000197/O" is sourceless and has been removed.
+*           Sourceless block "XLXI_1/Msub_State_0_addsub0000_xor<30>" (XOR) removed.
+*            The signal "XLXI_1/State_0_addsub0000<30>" is sourceless and has been removed.
+*             Sourceless block "XLXI_1/State_0_not0001210" (ROM) removed.
+*              The signal "XLXI_1/State_0_not0001_map60" is sourceless and has been removed.
+*               Sourceless block "XLXI_1/State_0_not0001256" (ROM) removed.
+*                The signal "XLXI_1/State_0_not0001" is sourceless and has been removed.
+*                 Sourceless block "XLXI_1/State_0" (FF) removed.
+*                  The signal "XLXI_1/State<0>" is sourceless and has been removed.
+*                   Sourceless block "XLXI_1/Mcount_SDC_lut<0>" (ROM) removed.
+*                    The signal "XLXI_1/N2" is sourceless and has been removed.
+*                     Sourceless block "XLXI_1/Mcount_SDC_cy<0>" (MUX) removed.
+*                      The signal "XLXI_1/Mcount_SDC_cy<0>" is sourceless and has been removed.
+*                       Sourceless block "XLXI_1/Mcount_SDC_cy<1>" (MUX) removed.
+*                        The signal "XLXI_1/Mcount_SDC_cy<1>" is sourceless and has been removed.
+*                         Sourceless block "XLXI_1/Mcount_SDC_cy<2>" (MUX) removed.
+*                          The signal "XLXI_1/Mcount_SDC_cy<2>" is sourceless and has been removed.
+*                           Sourceless block "XLXI_1/Mcount_SDC_cy<3>" (MUX) removed.
+*                            The signal "XLXI_1/Mcount_SDC_cy<3>" is sourceless and has been removed.
+*                             Sourceless block "XLXI_1/Mcount_SDC_cy<4>" (MUX) removed.
+*                              The signal "XLXI_1/Mcount_SDC_cy<4>" is sourceless and has been removed.
+*                               Sourceless block "XLXI_1/Mcount_SDC_cy<5>" (MUX) removed.
+*                                The signal "XLXI_1/Mcount_SDC_cy<5>" is sourceless and has been removed.
+*                                 Sourceless block "XLXI_1/Mcount_SDC_cy<6>" (MUX) removed.
+*                                  The signal "XLXI_1/Mcount_SDC_cy<6>" is sourceless and has been removed.
+*                                   Sourceless block "XLXI_1/Mcount_SDC_cy<7>" (MUX) removed.
+*                                    The signal "XLXI_1/Mcount_SDC_cy<7>" is sourceless and has been removed.
+*                                     Sourceless block "XLXI_1/Mcount_SDC_cy<8>" (MUX) removed.
+*                                      The signal "XLXI_1/Mcount_SDC_cy<8>" is sourceless and has been removed.
+*                                       Sourceless block "XLXI_1/Mcount_SDC_cy<9>" (MUX) removed.
+*                                        The signal "XLXI_1/Mcount_SDC_cy<9>" is sourceless and has been removed.
+*                                         Sourceless block "XLXI_1/Mcount_SDC_cy<10>" (MUX) removed.
+*                                          The signal "XLXI_1/Mcount_SDC_cy<10>" is sourceless and has been removed.
+*                                           Sourceless block "XLXI_1/Mcount_SDC_cy<11>" (MUX) removed.
+*                                            The signal "XLXI_1/Mcount_SDC_cy<11>" is sourceless and has been removed.
+*                                             Sourceless block "XLXI_1/Mcount_SDC_cy<12>" (MUX) removed.
+*                                              The signal "XLXI_1/Mcount_SDC_cy<12>" is sourceless and has been removed.
+*                                               Sourceless block "XLXI_1/Mcount_SDC_cy<13>" (MUX) removed.
+*                                                The signal "XLXI_1/Mcount_SDC_cy<13>" is sourceless and has been removed.
+*                                                 Sourceless block "XLXI_1/Mcount_SDC_cy<14>" (MUX) removed.
+**The signal "XLXI_1/Mcount_SDC_cy<14>" is sourceless and has been removed.
+** Sourceless block "XLXI_1/Mcount_SDC_cy<15>" (MUX) removed.
+**  The signal "XLXI_1/Mcount_SDC_cy<15>" is sourceless and has been removed.
+**   Sourceless block "XLXI_1/Mcount_SDC_cy<16>" (MUX) removed.
+**    The signal "XLXI_1/Mcount_SDC_cy<16>" is sourceless and has been removed.
+**     Sourceless block "XLXI_1/Mcount_SDC_cy<17>" (MUX) removed.
+**      The signal "XLXI_1/Mcount_SDC_cy<17>" is sourceless and has been removed.
+**       Sourceless block "XLXI_1/Mcount_SDC_cy<18>" (MUX) removed.
+**        The signal "XLXI_1/Mcount_SDC_cy<18>" is sourceless and has been removed.
+**         Sourceless block "XLXI_1/Mcount_SDC_cy<19>" (MUX) removed.
+**          The signal "XLXI_1/Mcount_SDC_cy<19>" is sourceless and has been removed.
+**           Sourceless block "XLXI_1/Mcount_SDC_cy<20>" (MUX) removed.
+**            The signal "XLXI_1/Mcount_SDC_cy<20>" is sourceless and has been removed.
+**             Sourceless block "XLXI_1/Mcount_SDC_cy<21>" (MUX) removed.
+**              The signal "XLXI_1/Mcount_SDC_cy<21>" is sourceless and has been removed.
+**               Sourceless block "XLXI_1/Mcount_SDC_cy<22>" (MUX) removed.
+**                The signal "XLXI_1/Mcount_SDC_cy<22>" is sourceless and has been removed.
+**                 Sourceless block "XLXI_1/Mcount_SDC_cy<23>" (MUX) removed.
+**                  The signal "XLXI_1/Mcount_SDC_cy<23>" is sourceless and has been removed.
+**                   Sourceless block "XLXI_1/Mcount_SDC_cy<24>" (MUX) removed.
+**                    The signal "XLXI_1/Mcount_SDC_cy<24>" is sourceless and has been removed.
+**                     Sourceless block "XLXI_1/Mcount_SDC_cy<25>" (MUX) removed.
+**                      The signal "XLXI_1/Mcount_SDC_cy<25>" is sourceless and has been removed.
+**                       Sourceless block "XLXI_1/Mcount_SDC_cy<26>" (MUX) removed.
+**                        The signal "XLXI_1/Mcount_SDC_cy<26>" is sourceless and has been removed.
+**                         Sourceless block "XLXI_1/Mcount_SDC_cy<27>" (MUX) removed.
+**                          The signal "XLXI_1/Mcount_SDC_cy<27>" is sourceless and has been removed.
+**                           Sourceless block "XLXI_1/Mcount_SDC_cy<28>" (MUX) removed.
+**                            The signal "XLXI_1/Mcount_SDC_cy<28>" is sourceless and has been removed.
+**                             Sourceless block "XLXI_1/Mcount_SDC_cy<29>" (MUX) removed.
+**                              The signal "XLXI_1/Mcount_SDC_cy<29>" is sourceless and has been removed.
+**                               Sourceless block "XLXI_1/Mcount_SDC_cy<30>" (MUX) removed.
+**                                The signal "XLXI_1/Mcount_SDC_cy<30>" is sourceless and has been removed.
+**                                 Sourceless block "XLXI_1/Mcount_SDC_xor<31>" (XOR) removed.
+**                                  The signal "XLXI_1/Mcount_SDC31" is sourceless and has been removed.
+**                                   Sourceless block "XLXI_1/SDC_31" (FF) removed.
+**                                    The signal "XLXI_1/SDC<31>" is sourceless and has been removed.
+**                                     Sourceless block "XLXI_1/Mcount_SDC_lut<31>" (ROM) removed.
+**                                      The signal "XLXI_1/N33" is sourceless and has been removed.
+**                                     Sourceless block "XLXI_1/Msub_State_0_addsub0000_lut<31>_INV_0" (BUF) removed.
+**                                      The signal "XLXI_1/N65" is sourceless and has been removed.
+**                               Sourceless block "XLXI_1/Mcount_SDC_xor<30>" (XOR) removed.
+**                                The signal "XLXI_1/Mcount_SDC30" is sourceless and has been removed.
+**                                 Sourceless block "XLXI_1/SDC_30" (FF) removed.
+**                                  The signal "XLXI_1/SDC<30>" is sourceless and has been removed.
+**                                   Sourceless block "XLXI_1/Mcount_SDC_lut<30>" (ROM) removed.
+**                                    The signal "XLXI_1/N32" is sourceless and has been removed.
+**                                   Sourceless block "XLXI_1/Msub_State_0_addsub0000_lut<30>_INV_0" (BUF) removed.
+**                                    The signal "XLXI_1/N64" is sourceless and has been removed.
+**                             Sourceless block "XLXI_1/Mcount_SDC_xor<29>" (XOR) removed.
+**                              The signal "XLXI_1/Mcount_SDC29" is sourceless and has been removed.
+**                               Sourceless block "XLXI_1/SDC_29" (FF) removed.
+**                                The signal "XLXI_1/SDC<29>" is sourceless and has been removed.
+**                                 Sourceless block "XLXI_1/Mcount_SDC_lut<29>" (ROM) removed.
+**                                  The signal "XLXI_1/N31" is sourceless and has been removed.
+**                                 Sourceless block "XLXI_1/Msub_State_0_addsub0000_lut<29>_INV_0" (BUF) removed.
+**                                  The signal "XLXI_1/N63" is sourceless and has been removed.
+**                                   Sourceless block "XLXI_1/Msub_State_0_addsub0000_xor<29>" (XOR) removed.
+**                                    The signal "XLXI_1/State_0_addsub0000<29>" is sourceless and has been removed.
+**                           Sourceless block "XLXI_1/Mcount_SDC_xor<28>" (XOR) removed.
+**                            The signal "XLXI_1/Mcount_SDC28" is sourceless and has been removed.
+**                             Sourceless block "XLXI_1/SDC_28" (FF) removed.
+**                              The signal "XLXI_1/SDC<28>" is sourceless and has been removed.
+**                               Sourceless block "XLXI_1/Mcount_SDC_lut<28>" (ROM) removed.
+**                                The signal "XLXI_1/N30" is sourceless and has been removed.
+**                               Sourceless block "XLXI_1/Msub_State_0_addsub0000_lut<28>_INV_0" (BUF) removed.
+**                                The signal "XLXI_1/N62" is sourceless and has been removed.
+**                                 Sourceless block "XLXI_1/Msub_State_0_addsub0000_xor<28>" (XOR) removed.
+**                                  The signal "XLXI_1/State_0_addsub0000<28>" is sourceless and has been removed.
+**                                   Sourceless block "XLXI_1/State_0_not0001168" (ROM) removed.
+**                                    The signal "XLXI_1/State_0_not0001_map47" is sourceless and has been removed.
+**                         Sourceless block "XLXI_1/Mcount_SDC_xor<27>" (XOR) removed.
+**                          The signal "XLXI_1/Mcount_SDC27" is sourceless and has been removed.
+**                           Sourceless block "XLXI_1/SDC_27" (FF) removed.
+**                            The signal "XLXI_1/SDC<27>" is sourceless and has been removed.
+**                             Sourceless block "XLXI_1/Mcount_SDC_lut<27>" (ROM) removed.
+**                              The signal "XLXI_1/N29" is sourceless and has been removed.
+**                             Sourceless block "XLXI_1/Msub_State_0_addsub0000_lut<27>_INV_0" (BUF) removed.
+**                              The signal "XLXI_1/N61" is sourceless and has been removed.
+**                               Sourceless block "XLXI_1/Msub_State_0_addsub0000_xor<27>" (XOR) removed.
+**                                The signal "XLXI_1/State_0_addsub0000<27>" is sourceless and has been removed.
+**                       Sourceless block "XLXI_1/Mcount_SDC_xor<26>" (XOR) removed.
+**                        The signal "XLXI_1/Mcount_SDC26" is sourceless and has been removed.
+**                         Sourceless block "XLXI_1/SDC_26" (FF) removed.
+**                          The signal "XLXI_1/SDC<26>" is sourceless and has been removed.
+**                           Sourceless block "XLXI_1/Mcount_SDC_lut<26>" (ROM) removed.
+**                            The signal "XLXI_1/N28" is sourceless and has been removed.
+**                           Sourceless block "XLXI_1/Msub_State_0_addsub0000_lut<26>_INV_0" (BUF) removed.
+**                            The signal "XLXI_1/N60" is sourceless and has been removed.
+**                             Sourceless block "XLXI_1/Msub_State_0_addsub0000_xor<26>" (XOR) removed.
+**                              The signal "XLXI_1/State_0_addsub0000<26>" is sourceless and has been removed.
+**                               Sourceless block "XLXI_1/State_0_not000151" (ROM) removed.
+**                                The signal "XLXI_1/State_0_not0001_map17" is sourceless and has been removed.
+**                     Sourceless block "XLXI_1/Mcount_SDC_xor<25>" (XOR) removed.
+**                      The signal "XLXI_1/Mcount_SDC25" is sourceless and has been removed.
+**                       Sourceless block "XLXI_1/SDC_25" (FF) removed.
+**                        The signal "XLXI_1/SDC<25>" is sourceless and has been removed.
+**                         Sourceless block "XLXI_1/Mcount_SDC_lut<25>" (ROM) removed.
+**                          The signal "XLXI_1/N27" is sourceless and has been removed.
+**                         Sourceless block "XLXI_1/Msub_State_0_addsub0000_lut<25>_INV_0" (BUF) removed.
+**                          The signal "XLXI_1/N59" is sourceless and has been removed.
+**                           Sourceless block "XLXI_1/Msub_State_0_addsub0000_xor<25>" (XOR) removed.
+**                            The signal "XLXI_1/State_0_addsub0000<25>" is sourceless and has been removed.
+**                             Sourceless block "XLXI_1/State_0_not000131" (ROM) removed.
+**                              The signal "XLXI_1/State_0_not0001_map10" is sourceless and has been removed.
+**                   Sourceless block "XLXI_1/Mcount_SDC_xor<24>" (XOR) removed.
+**                    The signal "XLXI_1/Mcount_SDC24" is sourceless and has been removed.
+**                     Sourceless block "XLXI_1/SDC_24" (FF) removed.
+**                      The signal "XLXI_1/SDC<24>" is sourceless and has been removed.
+**                       Sourceless block "XLXI_1/Mcount_SDC_lut<24>" (ROM) removed.
+**                        The signal "XLXI_1/N26" is sourceless and has been removed.
+**                       Sourceless block "XLXI_1/Msub_State_0_addsub0000_lut<24>_INV_0" (BUF) removed.
+**                        The signal "XLXI_1/N58" is sourceless and has been removed.
+**                         Sourceless block "XLXI_1/Msub_State_0_addsub0000_xor<24>" (XOR) removed.
+**                          The signal "XLXI_1/State_0_addsub0000<24>" is sourceless and has been removed.
+**                           Sourceless block "XLXI_1/State_0_not000184" (ROM) removed.
+**                            The signal "XLXI_1/State_0_not0001_map25" is sourceless and has been removed.
+**                 Sourceless block "XLXI_1/Mcount_SDC_xor<23>" (XOR) removed.
+**                  The signal "XLXI_1/Mcount_SDC23" is sourceless and has been removed.
+**                   Sourceless block "XLXI_1/SDC_23" (FF) removed.
+**                    The signal "XLXI_1/SDC<23>" is sourceless and has been removed.
+**                     Sourceless block "XLXI_1/Mcount_SDC_lut<23>" (ROM) removed.
+**                      The signal "XLXI_1/N25" is sourceless and has been removed.
+**                     Sourceless block "XLXI_1/Msub_State_0_addsub0000_lut<23>_INV_0" (BUF) removed.
+**                      The signal "XLXI_1/N57" is sourceless and has been removed.
+**                       Sourceless block "XLXI_1/Msub_State_0_addsub0000_xor<23>" (XOR) removed.
+**                        The signal "XLXI_1/State_0_addsub0000<23>" is sourceless and has been removed.
+**               Sourceless block "XLXI_1/Mcount_SDC_xor<22>" (XOR) removed.
+**                The signal "XLXI_1/Mcount_SDC22" is sourceless and has been removed.
+**                 Sourceless block "XLXI_1/SDC_22" (FF) removed.
+**                  The signal "XLXI_1/SDC<22>" is sourceless and has been removed.
+**                   Sourceless block "XLXI_1/Mcount_SDC_lut<22>" (ROM) removed.
+**                    The signal "XLXI_1/N24" is sourceless and has been removed.
+**                   Sourceless block "XLXI_1/Msub_State_0_addsub0000_lut<22>_INV_0" (BUF) removed.
+**                    The signal "XLXI_1/N56" is sourceless and has been removed.
+**                     Sourceless block "XLXI_1/Msub_State_0_addsub0000_xor<22>" (XOR) removed.
+**                      The signal "XLXI_1/State_0_addsub0000<22>" is sourceless and has been removed.
+**                       Sourceless block "XLXI_1/State_0_not0001210_SW0" (ROM) removed.
+**                        The signal "XLXI_1/State_0_not0001210_SW0/O" is sourceless and has been removed.
+**             Sourceless block "XLXI_1/Mcount_SDC_xor<21>" (XOR) removed.
+**              The signal "XLXI_1/Mcount_SDC21" is sourceless and has been removed.
+**               Sourceless block "XLXI_1/SDC_21" (FF) removed.
+**                The signal "XLXI_1/SDC<21>" is sourceless and has been removed.
+**                 Sourceless block "XLXI_1/Mcount_SDC_lut<21>" (ROM) removed.
+**                  The signal "XLXI_1/N23" is sourceless and has been removed.
+**                 Sourceless block "XLXI_1/Msub_State_0_addsub0000_lut<21>_INV_0" (BUF) removed.
+**                  The signal "XLXI_1/N55" is sourceless and has been removed.
+**                   Sourceless block "XLXI_1/Msub_State_0_addsub0000_xor<21>" (XOR) removed.
+**                    The signal "XLXI_1/State_0_addsub0000<21>" is sourceless and has been removed.
+**           Sourceless block "XLXI_1/Mcount_SDC_xor<20>" (XOR) removed.
+**            The signal "XLXI_1/Mcount_SDC20" is sourceless and has been removed.
+**             Sourceless block "XLXI_1/SDC_20" (FF) removed.
+**              The signal "XLXI_1/SDC<20>" is sourceless and has been removed.
+**               Sourceless block "XLXI_1/Mcount_SDC_lut<20>" (ROM) removed.
+**                The signal "XLXI_1/N22" is sourceless and has been removed.
+**               Sourceless block "XLXI_1/Msub_State_0_addsub0000_lut<20>_INV_0" (BUF) removed.
+**                The signal "XLXI_1/N54" is sourceless and has been removed.
+**                 Sourceless block "XLXI_1/Msub_State_0_addsub0000_xor<20>" (XOR) removed.
+**                  The signal "XLXI_1/State_0_addsub0000<20>" is sourceless and has been removed.
+**                   Sourceless block "XLXI_1/State_0_not0001129" (ROM) removed.
+**                    The signal "XLXI_1/State_0_not0001129/O" is sourceless and has been removed.
+**         Sourceless block "XLXI_1/Mcount_SDC_xor<19>" (XOR) removed.
+**          The signal "XLXI_1/Mcount_SDC19" is sourceless and has been removed.
+**           Sourceless block "XLXI_1/SDC_19" (FF) removed.
+**            The signal "XLXI_1/SDC<19>" is sourceless and has been removed.
+**             Sourceless block "XLXI_1/Mcount_SDC_lut<19>" (ROM) removed.
+**              The signal "XLXI_1/N21" is sourceless and has been removed.
+**             Sourceless block "XLXI_1/Msub_State_0_addsub0000_lut<19>_INV_0" (BUF) removed.
+**              The signal "XLXI_1/N53" is sourceless and has been removed.
+**               Sourceless block "XLXI_1/Msub_State_0_addsub0000_xor<19>" (XOR) removed.
+**                The signal "XLXI_1/State_0_addsub0000<19>" is sourceless and has been removed.
+**                 Sourceless block "XLXI_1/State_0_not0001154" (ROM) removed.
+**                  The signal "XLXI_1/State_0_not0001_map44" is sourceless and has been removed.
+**       Sourceless block "XLXI_1/Mcount_SDC_xor<18>" (XOR) removed.
+**        The signal "XLXI_1/Mcount_SDC18" is sourceless and has been removed.
+**         Sourceless block "XLXI_1/SDC_18" (FF) removed.
+**          The signal "XLXI_1/SDC<18>" is sourceless and has been removed.
+**           Sourceless block "XLXI_1/Mcount_SDC_lut<18>" (ROM) removed.
+**            The signal "XLXI_1/N20" is sourceless and has been removed.
+**           Sourceless block "XLXI_1/Msub_State_0_addsub0000_lut<18>_INV_0" (BUF) removed.
+**            The signal "XLXI_1/N52" is sourceless and has been removed.
+**             Sourceless block "XLXI_1/Msub_State_0_addsub0000_xor<18>" (XOR) removed.
+**              The signal "XLXI_1/State_0_addsub0000<18>" is sourceless and has been removed.
+**     Sourceless block "XLXI_1/Mcount_SDC_xor<17>" (XOR) removed.
+**      The signal "XLXI_1/Mcount_SDC17" is sourceless and has been removed.
+**       Sourceless block "XLXI_1/SDC_17" (FF) removed.
+**        The signal "XLXI_1/SDC<17>" is sourceless and has been removed.
+**         Sourceless block "XLXI_1/Mcount_SDC_lut<17>" (ROM) removed.
+**          The signal "XLXI_1/N19" is sourceless and has been removed.
+**         Sourceless block "XLXI_1/Msub_State_0_addsub0000_lut<17>_INV_0" (BUF) removed.
+**          The signal "XLXI_1/N51" is sourceless and has been removed.
+**           Sourceless block "XLXI_1/Msub_State_0_addsub0000_xor<17>" (XOR) removed.
+**            The signal "XLXI_1/State_0_addsub0000<17>" is sourceless and has been removed.
+**   Sourceless block "XLXI_1/Mcount_SDC_xor<16>" (XOR) removed.
+**    The signal "XLXI_1/Mcount_SDC16" is sourceless and has been removed.
+**     Sourceless block "XLXI_1/SDC_16" (FF) removed.
+**      The signal "XLXI_1/SDC<16>" is sourceless and has been removed.
+**       Sourceless block "XLXI_1/Mcount_SDC_lut<16>" (ROM) removed.
+**        The signal "XLXI_1/N18" is sourceless and has been removed.
+**       Sourceless block "XLXI_1/Msub_State_0_addsub0000_lut<16>_INV_0" (BUF) removed.
+**        The signal "XLXI_1/N50" is sourceless and has been removed.
+**         Sourceless block "XLXI_1/Msub_State_0_addsub0000_xor<16>" (XOR) removed.
+**          The signal "XLXI_1/State_0_addsub0000<16>" is sourceless and has been removed.
+** Sourceless block "XLXI_1/Mcount_SDC_xor<15>" (XOR) removed.
+**  The signal "XLXI_1/Mcount_SDC15" is sourceless and has been removed.
+**   Sourceless block "XLXI_1/SDC_15" (FF) removed.
+**    The signal "XLXI_1/SDC<15>" is sourceless and has been removed.
+**     Sourceless block "XLXI_1/Mcount_SDC_lut<15>" (ROM) removed.
+**      The signal "XLXI_1/N17" is sourceless and has been removed.
+**     Sourceless block "XLXI_1/Msub_State_0_addsub0000_lut<15>_INV_0" (BUF) removed.
+**      The signal "XLXI_1/N49" is sourceless and has been removed.
+**       Sourceless block "XLXI_1/Msub_State_0_addsub0000_xor<15>" (XOR) removed.
+**        The signal "XLXI_1/State_0_addsub0000<15>" is sourceless and has been removed.
+*                                                 Sourceless block "XLXI_1/Mcount_SDC_xor<14>" (XOR) removed.
+**The signal "XLXI_1/Mcount_SDC14" is sourceless and has been removed.
+** Sourceless block "XLXI_1/SDC_14" (FF) removed.
+**  The signal "XLXI_1/SDC<14>" is sourceless and has been removed.
+**   Sourceless block "XLXI_1/Mcount_SDC_lut<14>" (ROM) removed.
+**    The signal "XLXI_1/N16" is sourceless and has been removed.
+**   Sourceless block "XLXI_1/Msub_State_0_addsub0000_lut<14>_INV_0" (BUF) removed.
+**    The signal "XLXI_1/N48" is sourceless and has been removed.
+**     Sourceless block "XLXI_1/Msub_State_0_addsub0000_xor<14>" (XOR) removed.
+**      The signal "XLXI_1/State_0_addsub0000<14>" is sourceless and has been removed.
+*                                               Sourceless block "XLXI_1/Mcount_SDC_xor<13>" (XOR) removed.
+*                                                The signal "XLXI_1/Mcount_SDC13" is sourceless and has been removed.
+*                                                 Sourceless block "XLXI_1/SDC_13" (FF) removed.
+**The signal "XLXI_1/SDC<13>" is sourceless and has been removed.
+** Sourceless block "XLXI_1/Mcount_SDC_lut<13>" (ROM) removed.
+**  The signal "XLXI_1/N15" is sourceless and has been removed.
+** Sourceless block "XLXI_1/Msub_State_0_addsub0000_lut<13>_INV_0" (BUF) removed.
+**  The signal "XLXI_1/N47" is sourceless and has been removed.
+**   Sourceless block "XLXI_1/Msub_State_0_addsub0000_xor<13>" (XOR) removed.
+**    The signal "XLXI_1/State_0_addsub0000<13>" is sourceless and has been removed.
+*                                             Sourceless block "XLXI_1/Mcount_SDC_xor<12>" (XOR) removed.
+*                                              The signal "XLXI_1/Mcount_SDC12" is sourceless and has been removed.
+*                                               Sourceless block "XLXI_1/SDC_12" (FF) removed.
+*                                                The signal "XLXI_1/SDC<12>" is sourceless and has been removed.
+*                                                 Sourceless block "XLXI_1/Mcount_SDC_lut<12>" (ROM) removed.
+**The signal "XLXI_1/N14" is sourceless and has been removed.
+*                                                 Sourceless block "XLXI_1/Msub_State_0_addsub0000_lut<12>_INV_0" (BUF) removed.
+**The signal "XLXI_1/N46" is sourceless and has been removed.
+** Sourceless block "XLXI_1/Msub_State_0_addsub0000_xor<12>" (XOR) removed.
+**  The signal "XLXI_1/State_0_addsub0000<12>" is sourceless and has been removed.
+*                                           Sourceless block "XLXI_1/Mcount_SDC_xor<11>" (XOR) removed.
+*                                            The signal "XLXI_1/Mcount_SDC11" is sourceless and has been removed.
+*                                             Sourceless block "XLXI_1/SDC_11" (FF) removed.
+*                                              The signal "XLXI_1/SDC<11>" is sourceless and has been removed.
+*                                               Sourceless block "XLXI_1/Mcount_SDC_lut<11>" (ROM) removed.
+*                                                The signal "XLXI_1/N13" is sourceless and has been removed.
+*                                               Sourceless block "XLXI_1/Msub_State_0_addsub0000_lut<11>_INV_0" (BUF) removed.
+*                                                The signal "XLXI_1/N45" is sourceless and has been removed.
+*                                                 Sourceless block "XLXI_1/Msub_State_0_addsub0000_xor<11>" (XOR) removed.
+**The signal "XLXI_1/State_0_addsub0000<11>" is sourceless and has been removed.
+*                                         Sourceless block "XLXI_1/Mcount_SDC_xor<10>" (XOR) removed.
+*                                          The signal "XLXI_1/Mcount_SDC10" is sourceless and has been removed.
+*                                           Sourceless block "XLXI_1/SDC_10" (FF) removed.
+*                                            The signal "XLXI_1/SDC<10>" is sourceless and has been removed.
+*                                             Sourceless block "XLXI_1/Mcount_SDC_lut<10>" (ROM) removed.
+*                                              The signal "XLXI_1/N12" is sourceless and has been removed.
+*                                             Sourceless block "XLXI_1/Msub_State_0_addsub0000_lut<10>_INV_0" (BUF) removed.
+*                                              The signal "XLXI_1/N44" is sourceless and has been removed.
+*                                               Sourceless block "XLXI_1/Msub_State_0_addsub0000_xor<10>" (XOR) removed.
+*                                                The signal "XLXI_1/State_0_addsub0000<10>" is sourceless and has been removed.
+*                                       Sourceless block "XLXI_1/Mcount_SDC_xor<9>" (XOR) removed.
+*                                        The signal "XLXI_1/Mcount_SDC9" is sourceless and has been removed.
+*                                         Sourceless block "XLXI_1/SDC_9" (FF) removed.
+*                                          The signal "XLXI_1/SDC<9>" is sourceless and has been removed.
+*                                           Sourceless block "XLXI_1/Mcount_SDC_lut<9>" (ROM) removed.
+*                                            The signal "XLXI_1/N11" is sourceless and has been removed.
+*                                           Sourceless block "XLXI_1/Msub_State_0_addsub0000_lut<9>_INV_0" (BUF) removed.
+*                                            The signal "XLXI_1/N43" is sourceless and has been removed.
+*                                             Sourceless block "XLXI_1/Msub_State_0_addsub0000_xor<9>" (XOR) removed.
+*                                              The signal "XLXI_1/State_0_addsub0000<9>" is sourceless and has been removed.
+*                                     Sourceless block "XLXI_1/Mcount_SDC_xor<8>" (XOR) removed.
+*                                      The signal "XLXI_1/Mcount_SDC8" is sourceless and has been removed.
+*                                       Sourceless block "XLXI_1/SDC_8" (FF) removed.
+*                                        The signal "XLXI_1/SDC<8>" is sourceless and has been removed.
+*                                         Sourceless block "XLXI_1/Mcount_SDC_lut<8>" (ROM) removed.
+*                                          The signal "XLXI_1/N10" is sourceless and has been removed.
+*                                         Sourceless block "XLXI_1/Msub_State_0_addsub0000_lut<8>_INV_0" (BUF) removed.
+*                                          The signal "XLXI_1/N42" is sourceless and has been removed.
+*                                           Sourceless block "XLXI_1/Msub_State_0_addsub0000_xor<8>" (XOR) removed.
+*                                            The signal "XLXI_1/State_0_addsub0000<8>" is sourceless and has been removed.
+*                                   Sourceless block "XLXI_1/Mcount_SDC_xor<7>" (XOR) removed.
+*                                    The signal "XLXI_1/Mcount_SDC7" is sourceless and has been removed.
+*                                     Sourceless block "XLXI_1/SDC_7" (FF) removed.
+*                                      The signal "XLXI_1/SDC<7>" is sourceless and has been removed.
+*                                       Sourceless block "XLXI_1/Mcount_SDC_lut<7>" (ROM) removed.
+*                                        The signal "XLXI_1/N9" is sourceless and has been removed.
+*                                       Sourceless block "XLXI_1/Msub_State_0_addsub0000_lut<7>_INV_0" (BUF) removed.
+*                                        The signal "XLXI_1/N41" is sourceless and has been removed.
+*                                         Sourceless block "XLXI_1/Msub_State_0_addsub0000_xor<7>" (XOR) removed.
+*                                          The signal "XLXI_1/State_0_addsub0000<7>" is sourceless and has been removed.
+*                                 Sourceless block "XLXI_1/Mcount_SDC_xor<6>" (XOR) removed.
+*                                  The signal "XLXI_1/Mcount_SDC6" is sourceless and has been removed.
+*                                   Sourceless block "XLXI_1/SDC_6" (FF) removed.
+*                                    The signal "XLXI_1/SDC<6>" is sourceless and has been removed.
+*                                     Sourceless block "XLXI_1/Mcount_SDC_lut<6>" (ROM) removed.
+*                                      The signal "XLXI_1/N8" is sourceless and has been removed.
+*                                     Sourceless block "XLXI_1/Msub_State_0_addsub0000_lut<6>_INV_0" (BUF) removed.
+*                                      The signal "XLXI_1/N40" is sourceless and has been removed.
+*                                       Sourceless block "XLXI_1/Msub_State_0_addsub0000_xor<6>" (XOR) removed.
+*                                        The signal "XLXI_1/State_0_addsub0000<6>" is sourceless and has been removed.
+*                               Sourceless block "XLXI_1/Mcount_SDC_xor<5>" (XOR) removed.
+*                                The signal "XLXI_1/Mcount_SDC5" is sourceless and has been removed.
+*                                 Sourceless block "XLXI_1/SDC_5" (FF) removed.
+*                                  The signal "XLXI_1/SDC<5>" is sourceless and has been removed.
+*                                   Sourceless block "XLXI_1/Mcount_SDC_lut<5>" (ROM) removed.
+*                                    The signal "XLXI_1/N7" is sourceless and has been removed.
+*                                   Sourceless block "XLXI_1/Msub_State_0_addsub0000_lut<5>_INV_0" (BUF) removed.
+*                                    The signal "XLXI_1/N39" is sourceless and has been removed.
+*                                     Sourceless block "XLXI_1/Msub_State_0_addsub0000_xor<5>" (XOR) removed.
+*                                      The signal "XLXI_1/State_0_addsub0000<5>" is sourceless and has been removed.
+*                             Sourceless block "XLXI_1/Mcount_SDC_xor<4>" (XOR) removed.
+*                              The signal "XLXI_1/Mcount_SDC4" is sourceless and has been removed.
+*                               Sourceless block "XLXI_1/SDC_4" (FF) removed.
+*                                The signal "XLXI_1/SDC<4>" is sourceless and has been removed.
+*                                 Sourceless block "XLXI_1/Mcount_SDC_lut<4>" (ROM) removed.
+*                                  The signal "XLXI_1/N6" is sourceless and has been removed.
+*                                 Sourceless block "XLXI_1/Msub_State_0_addsub0000_lut<4>_INV_0" (BUF) removed.
+*                                  The signal "XLXI_1/N38" is sourceless and has been removed.
+*                                   Sourceless block "XLXI_1/Msub_State_0_addsub0000_xor<4>" (XOR) removed.
+*                                    The signal "XLXI_1/State_0_addsub0000<4>" is sourceless and has been removed.
+*                           Sourceless block "XLXI_1/Mcount_SDC_xor<3>" (XOR) removed.
+*                            The signal "XLXI_1/Mcount_SDC3" is sourceless and has been removed.
+*                             Sourceless block "XLXI_1/SDC_3" (FF) removed.
+*                              The signal "XLXI_1/SDC<3>" is sourceless and has been removed.
+*                               Sourceless block "XLXI_1/Mcount_SDC_lut<3>" (ROM) removed.
+*                                The signal "XLXI_1/N5" is sourceless and has been removed.
+*                               Sourceless block "XLXI_1/Msub_State_0_addsub0000_lut<3>_INV_0" (BUF) removed.
+*                                The signal "XLXI_1/N37" is sourceless and has been removed.
+*                                 Sourceless block "XLXI_1/Msub_State_0_addsub0000_xor<3>" (XOR) removed.
+*                                  The signal "XLXI_1/State_0_addsub0000<3>" is sourceless and has been removed.
+*                         Sourceless block "XLXI_1/Mcount_SDC_xor<2>" (XOR) removed.
+*                          The signal "XLXI_1/Mcount_SDC2" is sourceless and has been removed.
+*                           Sourceless block "XLXI_1/SDC_2" (FF) removed.
+*                            The signal "XLXI_1/SDC<2>" is sourceless and has been removed.
+*                             Sourceless block "XLXI_1/Mcount_SDC_lut<2>" (ROM) removed.
+*                              The signal "XLXI_1/N4" is sourceless and has been removed.
+*                             Sourceless block "XLXI_1/Msub_State_0_addsub0000_lut<2>_INV_0" (BUF) removed.
+*                              The signal "XLXI_1/N36" is sourceless and has been removed.
+*                               Sourceless block "XLXI_1/Msub_State_0_addsub0000_xor<2>" (XOR) removed.
+*                                The signal "XLXI_1/State_0_addsub0000<2>" is sourceless and has been removed.
+*                                 Sourceless block "XLXI_1/State_0_not00018" (ROM) removed.
+*                                  The signal "XLXI_1/State_0_not00018/O" is sourceless and has been removed.
+*                       Sourceless block "XLXI_1/Mcount_SDC_xor<1>" (XOR) removed.
+*                        The signal "XLXI_1/Mcount_SDC1" is sourceless and has been removed.
+*                         Sourceless block "XLXI_1/SDC_1" (FF) removed.
+*                          The signal "XLXI_1/SDC<1>" is sourceless and has been removed.
+*                           Sourceless block "XLXI_1/Mcount_SDC_lut<1>" (ROM) removed.
+*                            The signal "XLXI_1/N3" is sourceless and has been removed.
+*                           Sourceless block "XLXI_1/Msub_State_0_addsub0000_lut<1>_INV_0" (BUF) removed.
+*                            The signal "XLXI_1/N35" is sourceless and has been removed.
+*                             Sourceless block "XLXI_1/Msub_State_0_addsub0000_xor<1>" (XOR) removed.
+*                              The signal "XLXI_1/State_0_addsub0000<1>" is sourceless and has been removed.
+*                     Sourceless block "XLXI_1/Mcount_SDC_xor<0>" (XOR) removed.
+*                      The signal "XLXI_1/Mcount_SDC" is sourceless and has been removed.
+*                       Sourceless block "XLXI_1/SDC_0" (FF) removed.
+*                        The signal "XLXI_1/SDC<0>" is sourceless and has been removed.
+*                         Sourceless block "XLXI_1/Msub_State_0_addsub0000_cy<0>_rt" (ROM) removed.
+*                          The signal "XLXI_1/Msub_State_0_addsub0000_cy<0>_rt" is sourceless and has been
+removed.
+*                           Sourceless block "XLXI_1/Msub_State_0_addsub0000_xor<0>" (XOR) removed.
+*                            The signal "XLXI_1/State_0_addsub0000<0>" is sourceless and has been removed.
+*                   Sourceless block "XLXI_1/State_inv1_INV_0" (BUF) removed.
+*                    The signal "XLXI_1/State_inv" is sourceless and has been removed.
+*                     Sourceless block "XLXI_1/DReg_0" (FF) removed.
+*                      The signal "XLXI_1/DReg<0>" is sourceless and has been removed.
+*                       Sourceless block "XLXI_1/DReg_1" (FF) removed.
+*                        The signal "XLXI_1/DReg<1>" is sourceless and has been removed.
+*                         Sourceless block "XLXI_1/DReg_2" (FF) removed.
+*                          The signal "XLXI_1/DReg<2>" is sourceless and has been removed.
+*                           Sourceless block "XLXI_1/DReg_3" (FF) removed.
+*                            The signal "XLXI_1/DReg<3>" is sourceless and has been removed.
+*                             Sourceless block "XLXI_1/DReg_4" (FF) removed.
+*                              The signal "XLXI_1/DReg<4>" is sourceless and has been removed.
+*                               Sourceless block "XLXI_1/DReg_5" (FF) removed.
+*                                The signal "XLXI_1/DReg<5>" is sourceless and has been removed.
+*                                 Sourceless block "XLXI_1/DReg_6" (FF) removed.
+*                                  The signal "XLXI_1/DReg<6>" is sourceless and has been removed.
+*                                   Sourceless block "XLXI_1/DReg_7" (FF) removed.
+*                                    The signal "XLXI_1/DReg<7>" is sourceless and has been removed.
+*                                     Sourceless block "XLXI_1/DBx_mux00009" (ROM) removed.
+*                                      The signal "XLXI_1/DBx_mux0000_map5" is sourceless and has been removed.
+*                                       Sourceless block "XLXI_1/DBx_mux000044" (ROM) removed.
+*                                        The signal "XLXI_1/DBx_mux0000" is sourceless and has been removed.
+*                                         Sourceless block "XLXI_1/DBx" (FF) removed.
+*                                          The signal "XLXI_1/DBx" is sourceless and has been removed.
+*                                           Sourceless block "XLXI_1/detect_0" (FF) removed.
+*                                            The signal "XLXI_1/detect<0>" is sourceless and has been removed.
+*                                             Sourceless block "XLXI_1/y_cmp_eq00001" (ROM) removed.
+*                                              The signal "XLXI_1/y_cmp_eq0000" is sourceless and has been removed.
+*                                               Sourceless block "XLXI_1/y" (FF) removed.
+*                                     Sourceless block "XLXI_1/DBx_mux000034" (ROM) removed.
+*                                      The signal "XLXI_1/DBx_mux0000_map13" is sourceless and has been removed.
+*                                       Sourceless block "XLXI_1/DBx_mux000035" (ROM) removed.
+*                                        The signal "XLXI_1/DBx_mux0000_map14" is sourceless and has been removed.
+*                             Sourceless block "XLXI_1/DBx_mux00004" (ROM) removed.
+*                              The signal "XLXI_1/DBx_mux0000_map2" is sourceless and has been removed.
+*                             Sourceless block "XLXI_1/DBx_mux000029" (ROM) removed.
+*                              The signal "XLXI_1/DBx_mux0000_map10" is sourceless and has been removed.
+The signal "XLXI_1/N1" is sourceless and has been removed.
+The signal "XLXI_1/SPB" is sourceless and has been removed.
+ Sourceless block "XLXI_1/DPB" (FF) removed.
+  The signal "XLXI_1/DPB" is sourceless and has been removed.
+The signal "XLXI_1/RST_inv" is sourceless and has been removed.
+
+The trimmed logic reported below is either:
+   1. part of a cycle
+   2. part of disabled logic
+   3. a side-effect of other trimmed logic
+
+The signal "go_IBUF" is unused and has been removed.
+ Unused block "go_IBUF" (BUF) removed.
+  The signal "go" is unused and has been removed.
+   Unused block "go" (PAD) removed.
+Unused block "XLXI_1/RST_inv1_INV_0" (BUF) removed.
+Unused block "XLXI_1/SPB" (FF) removed.
+Unused block "XLXI_1/XST_GND" (ZERO) removed.
+Unused block "XLXI_1/XST_VCC" (ONE) removed.
+
+Optimized Block(s):
+TYPE 		BLOCK
+GND 		XLXI_3/XST_GND
+VCC 		XLXI_3/XST_VCC
+GND 		XST_GND
+
+To enable printing of redundant blocks removed and signals merged, set the
+detailed map report option and rerun map.
+
+Section 6 - IOB Properties
+--------------------------
+
++-----------------------------------------------------------------------------------------------------------------------------------------+
+| IOB Name                           | IOB Type         | Direction | IO Standard | Drive    | Slew | Reg (s)      | Resistor | IBUF/IFD  |
+|                                    |                  |           |             | Strength | Rate |              |          | Delay     |
++-----------------------------------------------------------------------------------------------------------------------------------------+
+| Dout<0>                            | IOB              | OUTPUT    | LVCMOS25    | 12       | SLOW |              |          | 0 / 0     |
+| Dout<1>                            | IOB              | OUTPUT    | LVCMOS25    | 12       | SLOW |              |          | 0 / 0     |
+| Dout<2>                            | IOB              | OUTPUT    | LVCMOS25    | 12       | SLOW |              |          | 0 / 0     |
+| Dout<3>                            | IOB              | OUTPUT    | LVCMOS25    | 12       | SLOW |              |          | 0 / 0     |
+| done                               | IOB              | OUTPUT    | LVCMOS25    | 12       | SLOW |              |          | 0 / 0     |
+| inFlags<0>                         | IOB              | OUTPUT    | LVCMOS25    | 12       | SLOW |              |          | 0 / 0     |
+| inFlags<1>                         | IOB              | OUTPUT    | LVCMOS25    | 12       | SLOW |              |          | 0 / 0     |
+| inFlags<2>                         | IOB              | OUTPUT    | LVCMOS25    | 12       | SLOW |              |          | 0 / 0     |
+| inFlags<3>                         | IOB              | OUTPUT    | LVCMOS25    | 12       | SLOW |              |          | 0 / 0     |
+| inFlags<4>                         | IOB              | OUTPUT    | LVCMOS25    | 12       | SLOW |              |          | 0 / 0     |
+| inFlags<5>                         | IOB              | OUTPUT    | LVCMOS25    | 12       | SLOW |              |          | 0 / 0     |
+| inFlags<6>                         | IOB              | OUTPUT    | LVCMOS25    | 12       | SLOW |              |          | 0 / 0     |
+| inFlags<7>                         | IOB              | OUTPUT    | LVCMOS25    | 12       | SLOW |              |          | 0 / 0     |
+| mainClk                            | IBUF             | INPUT     | LVCMOS25    |          |      |              |          | 0 / 0     |
+| monClk                             | IOB              | OUTPUT    | LVCMOS25    | 12       | SLOW |              |          | 0 / 0     |
+| outFlags<0>                        | IOB              | OUTPUT    | LVCMOS25    | 12       | SLOW |              |          | 0 / 0     |
+| outFlags<1>                        | IOB              | OUTPUT    | LVCMOS25    | 12       | SLOW |              |          | 0 / 0     |
+| outFlags<2>                        | IOB              | OUTPUT    | LVCMOS25    | 12       | SLOW |              |          | 0 / 0     |
+| outFlags<3>                        | IOB              | OUTPUT    | LVCMOS25    | 12       | SLOW |              |          | 0 / 0     |
+| outFlags<4>                        | IOB              | OUTPUT    | LVCMOS25    | 12       | SLOW |              |          | 0 / 0     |
+| outFlags<5>                        | IOB              | OUTPUT    | LVCMOS25    | 12       | SLOW |              |          | 0 / 0     |
+| outFlags<6>                        | IOB              | OUTPUT    | LVCMOS25    | 12       | SLOW |              |          | 0 / 0     |
+| outFlags<7>                        | IOB              | OUTPUT    | LVCMOS25    | 12       | SLOW |              |          | 0 / 0     |
+| reset                              | IBUF             | INPUT     | LVCMOS25    |          |      |              |          | 0 / 0     |
++-----------------------------------------------------------------------------------------------------------------------------------------+
+
+Section 7 - RPMs
+----------------
+
+Section 8 - Guide Report
+------------------------
+Guide not run on this design.
+
+Section 9 - Area Group and Partition Summary
+--------------------------------------------
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+Area Group Information
+----------------------
+
+  No area groups were found in this design.
+
+
+----------------------
+
+Section 10 - Modular Design Summary
+-----------------------------------
+Modular Design not used for this design.
+
+Section 11 - Timing Report
+--------------------------
+This design was not run using timing mode.
+
+Section 12 - Configuration String Details
+-----------------------------------------
+Use the "-detail" map option to print out Configuration Strings
+
+Section 13 - Control Set Information
+------------------------------------
+No control set information for this architecture.

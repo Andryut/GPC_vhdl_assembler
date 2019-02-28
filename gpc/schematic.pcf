@@ -1,0 +1,28 @@
+//! **************************************************************************
+// Written by: Map J.36 on Thu Feb 28 11:35:30 2019
+//! **************************************************************************
+
+SCHEMATIC START;
+PROHIBIT = SITE "P99";
+PROHIBIT = SITE "P43";
+PROHIBIT = SITE "P42";
+PROHIBIT = SITE "P39";
+PROHIBIT = SITE "P49";
+PROHIBIT = SITE "P48";
+PROHIBIT = SITE "P47";
+PROHIBIT = SITE "P13";
+PROHIBIT = SITE "P24";
+PROHIBIT = SITE "P27";
+PROHIBIT = SITE "P30";
+PROHIBIT = SITE "P38";
+PROHIBIT = SITE "P42";
+PROHIBIT = SITE "P44";
+PROHIBIT = SITE "P50";
+PROHIBIT = SITE "P69";
+PROHIBIT = SITE "P88";
+PROHIBIT = SITE "P90";
+PROHIBIT = SITE "P99";
+COMP "mainClk" LOCATE = SITE "P89" LEVEL 1;
+NET "mainClk_BUFGP/IBUFG" BEL "mainClk_BUFGP/BUFG.GCLKMUX" USELOCALCONNECT;
+NET "mainClk_BUFGP/IBUFG" PERIOD = 31.25 ns HIGH 50%;
+SCHEMATIC END;

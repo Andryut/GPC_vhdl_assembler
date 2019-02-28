@@ -1,0 +1,29 @@
+.data
+X
+Y
+
+.references
+initw 4
+else 12
+endw 16
+
+.code
+inA
+storeA X
+inA
+storeA Y
+loadA X
+subA Y
+jz endw
+jneg else
+loadA X
+subA Y
+storeA X
+jmp initw
+loadA Y
+subA X
+storeA Y
+jmp initw
+loadA X
+outA
+halt

@@ -1,0 +1,16 @@
+V3 10
+FL C:/Users/Andre/Desktop/carpeta_arquitectura/Assembler_arch/gpc/GPC_Harvard_a.vhd 2019/02/24.20:10:03 J.36
+EN work/GPC_Hvd_a 1551371703 \
+      FL C:/Users/Andre/Desktop/carpeta_arquitectura/Assembler_arch/gpc/GPC_Harvard_a.vhd \
+      PB ieee/std_logic_1164 1177545575 PH ieee/NUMERIC_STD 1177545583
+AR work/GPC_Hvd_a/Behavioral 1551371704 \
+      FL C:/Users/Andre/Desktop/carpeta_arquitectura/Assembler_arch/gpc/GPC_Harvard_a.vhd \
+      EN work/GPC_Hvd_a 1551371703
+FL C:/Users/Andre/Desktop/carpeta_arquitectura/Assembler_arch/gpc/schematic.vhf 2019/02/28.11:34:54 J.36
+EN work/schematic 1551371705 \
+      FL C:/Users/Andre/Desktop/carpeta_arquitectura/Assembler_arch/gpc/schematic.vhf \
+      PB ieee/std_logic_1164 1177545575 PH ieee/NUMERIC_STD 1177545583 LB UNISIM \
+      PH unisim/VCOMPONENTS 1177545586
+AR work/schematic/BEHAVIORAL 1551371706 \
+      FL C:/Users/Andre/Desktop/carpeta_arquitectura/Assembler_arch/gpc/schematic.vhf \
+      EN work/schematic 1551371705 CP Button CP GPC_Hvd_a CP ClkMon

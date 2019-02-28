@@ -1,0 +1,581 @@
+Release 9.2i - xst J.36
+Copyright (c) 1995-2007 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to ./xst/projnav.tmp
+CPU : 0.00 / 1.28 s | Elapsed : 0.00 / 1.00 s
+ 
+--> Parameter xsthdpdir set to ./xst
+CPU : 0.00 / 1.28 s | Elapsed : 0.00 / 1.00 s
+ 
+--> Reading design: schematic.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+     9.1) Device utilization summary
+     9.2) Partition Resource Summary
+     9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "schematic.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "schematic"
+Output Format                      : NGC
+Target Device                      : xc3s250e-4-vq100
+
+---- Source Options
+Top Module Name                    : schematic
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : lut
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : YES
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : YES
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Multiplier Style                   : auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 500
+Add Generic Clock Buffer(BUFG)     : 24
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Yes
+Use Synchronous Set                : Yes
+Use Synchronous Reset              : Yes
+Pack IO Registers into IOBs        : auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Library Search Order               : schematic.lso
+Keep Hierarchy                     : NO
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling vhdl file "C:/Users/Andre/Desktop/carpeta_arquitectura/Assembler_arch/gpc/GPC_Harvard_a.vhd" in Library work.
+Entity <GPC_Hvd_a> compiled.
+Entity <GPC_Hvd_a> (Architecture <Behavioral>) compiled.
+Compiling vhdl file "C:/Users/Andre/Desktop/carpeta_arquitectura/Assembler_arch/gpc/schematic.vhf" in Library work.
+Entity <schematic> compiled.
+Entity <schematic> (Architecture <BEHAVIORAL>) compiled.
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for entity <schematic> in library <work> (architecture <BEHAVIORAL>).
+
+Analyzing hierarchy for entity <GPC_Hvd_a> in library <work> (architecture <Behavioral>) with generics.
+	N = 4
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing Entity <schematic> in library <work> (Architecture <BEHAVIORAL>).
+WARNING:Xst:2211 - "C:/Users/Andre/Desktop/carpeta_arquitectura/Assembler_arch/gpc/schematic.vhf" line 67: Instantiating black box module <Button>.
+WARNING:Xst:2211 - "C:/Users/Andre/Desktop/carpeta_arquitectura/Assembler_arch/gpc/schematic.vhf" line 83: Instantiating black box module <ClkMon>.
+Entity <schematic> analyzed. Unit <schematic> generated.
+
+Analyzing generic Entity <GPC_Hvd_a> in library <work> (Architecture <Behavioral>).
+	N = 4
+Entity <GPC_Hvd_a> analyzed. Unit <GPC_Hvd_a> generated.
+
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <GPC_Hvd_a>.
+    Related source file is "C:/Users/Andre/Desktop/carpeta_arquitectura/Assembler_arch/gpc/GPC_Harvard_a.vhd".
+WARNING:Xst:1781 - Signal <ROM> is used but never assigned. Tied to default value.
+WARNING:Xst:646 - Signal <IR<7:6>> is assigned but never used.
+    Found 64x4-bit single-port RAM <Mram_RAM> for signal <RAM>.
+    Found finite state machine <FSM_0> for signal <state>.
+    -----------------------------------------------------------------------
+    | States             | 14                                             |
+    | Transitions        | 28                                             |
+    | Inputs             | 13                                             |
+    | Outputs            | 15                                             |
+    | Clock              | clk (rising_edge)                              |
+    | Reset              | rst (positive)                                 |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | fetch                                          |
+    | Power Up State     | fetch                                          |
+    | Encoding           | automatic                                      |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+WARNING:Xst:2734 - Property "use_dsp48" is not applicable for this technology.
+WARNING:Xst:2734 - Property "use_dsp48" is not applicable for this technology.
+    Found 8-bit register for signal <inFlags>.
+    Found 1-bit register for signal <done>.
+    Found 8-bit register for signal <outFlags>.
+    Found 4-bit register for signal <Dout>.
+    Found 4-bit register for signal <A>.
+    Found 4-bit addsub for signal <A$addsub0000>.
+    Found 8-bit register for signal <aux_inFlags>.
+    Found 8-bit register for signal <aux_outFlags>.
+    Found 12-bit register for signal <IR>.
+    Found 6-bit register for signal <PC>.
+    Found 6-bit adder for signal <PC$addsub0000> created at line 61.
+    Found 4-bit comparator greater for signal <PC$cmp_gt0000> created at line 118.
+    Found 4-bit comparator less for signal <PC$cmp_lt0000> created at line 124.
+    Summary:
+	inferred   1 Finite State Machine(s).
+	inferred   1 RAM(s).
+	inferred  43 D-type flip-flop(s).
+	inferred   2 Adder/Subtractor(s).
+	inferred   2 Comparator(s).
+Unit <GPC_Hvd_a> synthesized.
+
+
+Synthesizing Unit <schematic>.
+    Related source file is "C:/Users/Andre/Desktop/carpeta_arquitectura/Assembler_arch/gpc/schematic.vhf".
+Unit <schematic> synthesized.
+
+INFO:Xst:1767 - HDL ADVISOR - Resource sharing has identified that some arithmetic operations in this design can share the same physical resources for reduced device utilization. For improved clock frequency you may try to disable resource sharing.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 1
+ 64x4-bit single-port RAM                              : 1
+# Adders/Subtractors                                   : 1
+ 4-bit addsub                                          : 1
+# Registers                                            : 8
+ 1-bit register                                        : 1
+ 12-bit register                                       : 1
+ 4-bit register                                        : 2
+ 8-bit register                                        : 4
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Analyzing FSM <FSM_0> for best encoding.
+Optimizing FSM <XLXI_2/state> on signal <state[1:14]> with one-hot encoding.
+--------------------------
+ State  | Encoding
+--------------------------
+ fetch  | 00000000000001
+ decode | 00000000000010
+ loada  | 00000000000100
+ storea | 00000000001000
+ adda   | 00000000010000
+ suba   | 00000000100000
+ ina    | 00000001000000
+ outa   | 00000010000000
+ jpos   | 00000100000000
+ jneg   | 00001000000000
+ jz     | 00010000000000
+ jnz    | 00100000000000
+ jmp    | 01000000000000
+ halt   | 10000000000000
+--------------------------
+Loading device for application Rf_Device from file '3s250e.nph' in environment C:\Xilinx92i.
+Reading core <Button.ngc>.
+Reading core <ClkMon.ngc>.
+Loading core <Button> for timing and area information for instance <XLXI_1>.
+Loading core <ClkMon> for timing and area information for instance <XLXI_3>.
+WARNING:Xst:2404 -  FFs/Latches <IR<11:0>> (without init value) have a constant value of 0 in block <GPC_Hvd_a>.
+INFO:Xst:2664 - HDL ADVISOR - Unit <GPC_Hvd_a> : The RAM <Mram_RAM> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 64-word x 4-bit                     |          |
+    |     clkA           | connected to signal <clk>           | rise     |
+    |     weA            | connected to signal <_and0000>      | high     |
+    |     addrA          | connected to signal <ROM<63>>       |          |
+    |     diA            | connected to signal <A>             |          |
+    |     doA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+WARNING:Xst:1293 - FF/Latch  <FFd7> has a constant value of 0 in block <state>.
+WARNING:Xst:1293 - FF/Latch  <FFd8> has a constant value of 0 in block <state>.
+WARNING:Xst:1293 - FF/Latch  <FFd9> has a constant value of 0 in block <state>.
+WARNING:Xst:1293 - FF/Latch  <FFd10> has a constant value of 0 in block <state>.
+WARNING:Xst:1293 - FF/Latch  <FFd11> has a constant value of 0 in block <state>.
+WARNING:Xst:1710 - FF/Latch  <0> (without init value) has a constant value of 1 in block <aux_outFlags>.
+WARNING:Xst:1710 - FF/Latch  <1> (without init value) has a constant value of 0 in block <aux_outFlags>.
+WARNING:Xst:1710 - FF/Latch  <2> (without init value) has a constant value of 0 in block <aux_outFlags>.
+WARNING:Xst:1710 - FF/Latch  <3> (without init value) has a constant value of 0 in block <aux_outFlags>.
+WARNING:Xst:1710 - FF/Latch  <4> (without init value) has a constant value of 0 in block <aux_outFlags>.
+WARNING:Xst:1710 - FF/Latch  <5> (without init value) has a constant value of 0 in block <aux_outFlags>.
+WARNING:Xst:1710 - FF/Latch  <6> (without init value) has a constant value of 0 in block <aux_outFlags>.
+WARNING:Xst:1710 - FF/Latch  <7> (without init value) has a constant value of 0 in block <aux_outFlags>.
+WARNING:Xst:1710 - FF/Latch  <0> (without init value) has a constant value of 1 in block <aux_inFlags>.
+WARNING:Xst:1710 - FF/Latch  <1> (without init value) has a constant value of 0 in block <aux_inFlags>.
+WARNING:Xst:1710 - FF/Latch  <2> (without init value) has a constant value of 0 in block <aux_inFlags>.
+WARNING:Xst:1710 - FF/Latch  <3> (without init value) has a constant value of 0 in block <aux_inFlags>.
+WARNING:Xst:1710 - FF/Latch  <4> (without init value) has a constant value of 0 in block <aux_inFlags>.
+WARNING:Xst:1710 - FF/Latch  <5> (without init value) has a constant value of 0 in block <aux_inFlags>.
+WARNING:Xst:1710 - FF/Latch  <6> (without init value) has a constant value of 0 in block <aux_inFlags>.
+WARNING:Xst:1710 - FF/Latch  <7> (without init value) has a constant value of 0 in block <aux_inFlags>.
+WARNING:Xst:1710 - FF/Latch  <Dout_0> (without init value) has a constant value of 0 in block <XLXI_2>.
+WARNING:Xst:1710 - FF/Latch  <Dout_1> (without init value) has a constant value of 0 in block <XLXI_2>.
+WARNING:Xst:1710 - FF/Latch  <Dout_2> (without init value) has a constant value of 0 in block <XLXI_2>.
+WARNING:Xst:1710 - FF/Latch  <Dout_3> (without init value) has a constant value of 0 in block <XLXI_2>.
+WARNING:Xst:1710 - FF/Latch  <inFlags_0> (without init value) has a constant value of 0 in block <XLXI_2>.
+WARNING:Xst:1710 - FF/Latch  <inFlags_1> (without init value) has a constant value of 0 in block <XLXI_2>.
+WARNING:Xst:1710 - FF/Latch  <inFlags_2> (without init value) has a constant value of 0 in block <XLXI_2>.
+WARNING:Xst:1710 - FF/Latch  <inFlags_3> (without init value) has a constant value of 0 in block <XLXI_2>.
+WARNING:Xst:1710 - FF/Latch  <inFlags_4> (without init value) has a constant value of 0 in block <XLXI_2>.
+WARNING:Xst:1710 - FF/Latch  <inFlags_5> (without init value) has a constant value of 0 in block <XLXI_2>.
+WARNING:Xst:1710 - FF/Latch  <inFlags_6> (without init value) has a constant value of 0 in block <XLXI_2>.
+WARNING:Xst:1710 - FF/Latch  <inFlags_7> (without init value) has a constant value of 0 in block <XLXI_2>.
+WARNING:Xst:1710 - FF/Latch  <outFlags_0> (without init value) has a constant value of 0 in block <XLXI_2>.
+WARNING:Xst:1710 - FF/Latch  <outFlags_1> (without init value) has a constant value of 0 in block <XLXI_2>.
+WARNING:Xst:1710 - FF/Latch  <outFlags_2> (without init value) has a constant value of 0 in block <XLXI_2>.
+WARNING:Xst:1710 - FF/Latch  <outFlags_3> (without init value) has a constant value of 0 in block <XLXI_2>.
+WARNING:Xst:1710 - FF/Latch  <outFlags_4> (without init value) has a constant value of 0 in block <XLXI_2>.
+WARNING:Xst:1710 - FF/Latch  <outFlags_5> (without init value) has a constant value of 0 in block <XLXI_2>.
+WARNING:Xst:1710 - FF/Latch  <outFlags_6> (without init value) has a constant value of 0 in block <XLXI_2>.
+WARNING:Xst:1710 - FF/Latch  <outFlags_7> (without init value) has a constant value of 0 in block <XLXI_2>.
+WARNING:Xst:1710 - FF/Latch  <done> (without init value) has a constant value of 0 in block <XLXI_2>.
+WARNING:Xst:1293 - FF/Latch  <FFd1> has a constant value of 0 in block <state>.
+WARNING:Xst:2677 - Node <FFd2> of sequential type is unconnected in block <state>.
+WARNING:Xst:2677 - Node <FFd3> of sequential type is unconnected in block <state>.
+WARNING:Xst:2677 - Node <FFd4> of sequential type is unconnected in block <state>.
+WARNING:Xst:2677 - Node <FFd5> of sequential type is unconnected in block <state>.
+WARNING:Xst:2677 - Node <FFd6> of sequential type is unconnected in block <state>.
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# FSMs                                                 : 1
+# RAMs                                                 : 1
+ 64x4-bit single-port distributed RAM                  : 1
+# Adders/Subtractors                                   : 1
+ 4-bit addsub                                          : 1
+# Registers                                            : 55
+ Flip-Flops                                            : 55
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+INFO:Xst:2261 - The FF/Latch <FFd2> in Unit <FSM_0> is equivalent to the following 7 FFs/Latches, which will be removed : <FFd3> <FFd4> <FFd5> <FFd6> <FFd9> <FFd10> <FFd11> 
+WARNING:Xst:1293 - FF/Latch  <FFd1> has a constant value of 0 in block <FSM_0>.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch  <FFd2> has a constant value of 0 in block <FSM_0>.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch  <FFd7> has a constant value of 0 in block <FSM_0>.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch  <FFd8> has a constant value of 0 in block <FSM_0>.
+WARNING:Xst:2677 - Node <inst_Mram_mem1> of sequential type is unconnected in block <GPC_Hvd_a>.
+WARNING:Xst:2677 - Node <inst_Mram_mem3> of sequential type is unconnected in block <GPC_Hvd_a>.
+WARNING:Xst:2677 - Node <inst_Mram_mem5> of sequential type is unconnected in block <GPC_Hvd_a>.
+WARNING:Xst:2677 - Node <inst_Mram_mem7> of sequential type is unconnected in block <GPC_Hvd_a>.
+WARNING:Xst:1710 - FF/Latch  <aux_outFlags_0> (without init value) has a constant value of 1 in block <GPC_Hvd_a>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <aux_inFlags_0> (without init value) has a constant value of 1 in block <GPC_Hvd_a>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <done> (without init value) has a constant value of 0 in block <GPC_Hvd_a>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <outFlags_7> (without init value) has a constant value of 0 in block <GPC_Hvd_a>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <outFlags_6> (without init value) has a constant value of 0 in block <GPC_Hvd_a>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <outFlags_5> (without init value) has a constant value of 0 in block <GPC_Hvd_a>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <outFlags_4> (without init value) has a constant value of 0 in block <GPC_Hvd_a>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <outFlags_3> (without init value) has a constant value of 0 in block <GPC_Hvd_a>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <outFlags_2> (without init value) has a constant value of 0 in block <GPC_Hvd_a>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <outFlags_1> (without init value) has a constant value of 0 in block <GPC_Hvd_a>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <outFlags_0> (without init value) has a constant value of 0 in block <GPC_Hvd_a>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <Dout_0> (without init value) has a constant value of 0 in block <GPC_Hvd_a>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <Dout_1> (without init value) has a constant value of 0 in block <GPC_Hvd_a>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <Dout_2> (without init value) has a constant value of 0 in block <GPC_Hvd_a>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <Dout_3> (without init value) has a constant value of 0 in block <GPC_Hvd_a>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <inFlags_0> (without init value) has a constant value of 0 in block <GPC_Hvd_a>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <inFlags_1> (without init value) has a constant value of 0 in block <GPC_Hvd_a>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <inFlags_7> (without init value) has a constant value of 0 in block <GPC_Hvd_a>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <inFlags_6> (without init value) has a constant value of 0 in block <GPC_Hvd_a>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <inFlags_5> (without init value) has a constant value of 0 in block <GPC_Hvd_a>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <inFlags_2> (without init value) has a constant value of 0 in block <GPC_Hvd_a>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <inFlags_3> (without init value) has a constant value of 0 in block <GPC_Hvd_a>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <inFlags_4> (without init value) has a constant value of 0 in block <GPC_Hvd_a>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <aux_inFlags_1> (without init value) has a constant value of 0 in block <GPC_Hvd_a>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <aux_outFlags_1> (without init value) has a constant value of 0 in block <GPC_Hvd_a>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <aux_inFlags_2> (without init value) has a constant value of 0 in block <GPC_Hvd_a>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <aux_outFlags_2> (without init value) has a constant value of 0 in block <GPC_Hvd_a>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <aux_inFlags_3> (without init value) has a constant value of 0 in block <GPC_Hvd_a>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <aux_outFlags_3> (without init value) has a constant value of 0 in block <GPC_Hvd_a>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <aux_inFlags_4> (without init value) has a constant value of 0 in block <GPC_Hvd_a>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <aux_outFlags_4> (without init value) has a constant value of 0 in block <GPC_Hvd_a>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <aux_inFlags_5> (without init value) has a constant value of 0 in block <GPC_Hvd_a>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <aux_outFlags_5> (without init value) has a constant value of 0 in block <GPC_Hvd_a>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <aux_inFlags_6> (without init value) has a constant value of 0 in block <GPC_Hvd_a>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <aux_outFlags_6> (without init value) has a constant value of 0 in block <GPC_Hvd_a>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <aux_inFlags_7> (without init value) has a constant value of 0 in block <GPC_Hvd_a>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <aux_outFlags_7> (without init value) has a constant value of 0 in block <GPC_Hvd_a>.
+WARNING:Xst:2677 - Node <A_0> of sequential type is unconnected in block <GPC_Hvd_a>.
+WARNING:Xst:2677 - Node <A_1> of sequential type is unconnected in block <GPC_Hvd_a>.
+WARNING:Xst:2677 - Node <A_2> of sequential type is unconnected in block <GPC_Hvd_a>.
+WARNING:Xst:2677 - Node <A_3> of sequential type is unconnected in block <GPC_Hvd_a>.
+WARNING:Xst:2677 - Node <inst_Mram_mem> of sequential type is unconnected in block <GPC_Hvd_a>.
+WARNING:Xst:2677 - Node <inst_Mram_mem2> of sequential type is unconnected in block <GPC_Hvd_a>.
+WARNING:Xst:2677 - Node <inst_Mram_mem4> of sequential type is unconnected in block <GPC_Hvd_a>.
+WARNING:Xst:2677 - Node <inst_Mram_mem6> of sequential type is unconnected in block <GPC_Hvd_a>.
+WARNING:Xst:2677 - Node <state_FFd13> of sequential type is unconnected in block <GPC_Hvd_a>.
+WARNING:Xst:2677 - Node <state_FFd12> of sequential type is unconnected in block <GPC_Hvd_a>.
+WARNING:Xst:2677 - Node <state_FFd14> of sequential type is unconnected in block <GPC_Hvd_a>.
+
+Optimizing unit <schematic> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block schematic, actual ratio is 2.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Found no macro
+=========================================================================
+
+=========================================================================
+*                          Partition Report                             *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : schematic.ngr
+Top Level Output File Name         : schematic
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : NO
+
+Design Statistics
+# IOs                              : 29
+
+Cell Usage :
+# BELS                             : 288
+#      GND                         : 3
+#      INV                         : 34
+#      LUT1                        : 25
+#      LUT2                        : 34
+#      LUT3_L                      : 1
+#      LUT4                        : 12
+#      LUT4_L                      : 3
+#      MUXCY                       : 86
+#      VCC                         : 2
+#      XORCY                       : 88
+# FlipFlops/Latches                : 71
+#      FDC                         : 30
+#      FDCE                        : 9
+#      FDE                         : 32
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 24
+#      IBUF                        : 2
+#      OBUF                        : 22
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 3s250evq100-4 
+
+ Number of Slices:                      67  out of   2448     2%  
+ Number of Slice Flip Flops:            71  out of   4896     1%  
+ Number of 4 input LUTs:               109  out of   4896     2%  
+ Number of IOs:                         29
+ Number of bonded IOBs:                 25  out of     66    37%  
+ Number of GCLKs:                        1  out of     24     4%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+mainClk                            | BUFGP                  | 71    |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+-----------------------------------+------------------------+-------+
+Control Signal                     | Buffer(FF name)        | Load  |
+-----------------------------------+------------------------+-------+
+reset                              | IBUF                   | 39    |
+-----------------------------------+------------------------+-------+
+
+Timing Summary:
+---------------
+Speed Grade: -4
+
+   Minimum period: 8.712ns (Maximum Frequency: 114.784MHz)
+   Minimum input arrival time before clock: 5.004ns
+   Maximum output required time after clock: 4.310ns
+   Maximum combinational path delay: No path found
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'mainClk'
+  Clock period: 8.712ns (frequency: 114.784MHz)
+  Total number of paths / destination ports: 1980 / 79
+-------------------------------------------------------------------------
+Delay:               8.712ns (Levels of Logic = 24)
+  Source:            XLXI_1/SDC_0 (FF)
+  Destination:       XLXI_1/State_0 (FF)
+  Source Clock:      mainClk rising
+  Destination Clock: mainClk rising
+
+  Data Path: XLXI_1/SDC_0 to XLXI_1/State_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDE:C->Q              2   0.591   0.622  SDC_0 (SDC<0>)
+     LUT1:I0->O            1   0.704   0.000  Msub_State_0_addsub0000_cy<0>_rt (Msub_State_0_addsub0000_cy<0>_rt)
+     MUXCY:S->O            1   0.464   0.000  Msub_State_0_addsub0000_cy<0> (Msub_State_0_addsub0000_cy<0>)
+     MUXCY:CI->O           1   0.059   0.000  Msub_State_0_addsub0000_cy<1> (Msub_State_0_addsub0000_cy<1>)
+     MUXCY:CI->O           1   0.059   0.000  Msub_State_0_addsub0000_cy<2> (Msub_State_0_addsub0000_cy<2>)
+     MUXCY:CI->O           1   0.059   0.000  Msub_State_0_addsub0000_cy<3> (Msub_State_0_addsub0000_cy<3>)
+     MUXCY:CI->O           1   0.059   0.000  Msub_State_0_addsub0000_cy<4> (Msub_State_0_addsub0000_cy<4>)
+     MUXCY:CI->O           1   0.059   0.000  Msub_State_0_addsub0000_cy<5> (Msub_State_0_addsub0000_cy<5>)
+     MUXCY:CI->O           1   0.059   0.000  Msub_State_0_addsub0000_cy<6> (Msub_State_0_addsub0000_cy<6>)
+     MUXCY:CI->O           1   0.059   0.000  Msub_State_0_addsub0000_cy<7> (Msub_State_0_addsub0000_cy<7>)
+     MUXCY:CI->O           1   0.059   0.000  Msub_State_0_addsub0000_cy<8> (Msub_State_0_addsub0000_cy<8>)
+     MUXCY:CI->O           1   0.059   0.000  Msub_State_0_addsub0000_cy<9> (Msub_State_0_addsub0000_cy<9>)
+     MUXCY:CI->O           1   0.059   0.000  Msub_State_0_addsub0000_cy<10> (Msub_State_0_addsub0000_cy<10>)
+     MUXCY:CI->O           1   0.059   0.000  Msub_State_0_addsub0000_cy<11> (Msub_State_0_addsub0000_cy<11>)
+     MUXCY:CI->O           1   0.059   0.000  Msub_State_0_addsub0000_cy<12> (Msub_State_0_addsub0000_cy<12>)
+     MUXCY:CI->O           1   0.059   0.000  Msub_State_0_addsub0000_cy<13> (Msub_State_0_addsub0000_cy<13>)
+     MUXCY:CI->O           1   0.059   0.000  Msub_State_0_addsub0000_cy<14> (Msub_State_0_addsub0000_cy<14>)
+     MUXCY:CI->O           1   0.059   0.000  Msub_State_0_addsub0000_cy<15> (Msub_State_0_addsub0000_cy<15>)
+     MUXCY:CI->O           1   0.059   0.000  Msub_State_0_addsub0000_cy<16> (Msub_State_0_addsub0000_cy<16>)
+     MUXCY:CI->O           1   0.059   0.000  Msub_State_0_addsub0000_cy<17> (Msub_State_0_addsub0000_cy<17>)
+     MUXCY:CI->O           1   0.059   0.000  Msub_State_0_addsub0000_cy<18> (Msub_State_0_addsub0000_cy<18>)
+     XORCY:CI->O           1   0.804   0.424  Msub_State_0_addsub0000_xor<19> (State_0_addsub0000<19>)
+     LUT4:I3->O            1   0.704   0.455  State_0_not0001154 (State_0_not0001_map44)
+     LUT4:I2->O            1   0.704   0.499  State_0_not0001168 (State_0_not0001_map47)
+     LUT4:I1->O            1   0.704   0.420  State_0_not0001256 (State_0_not0001)
+     FDCE:CE                   0.555          State_0
+    ----------------------------------------
+    Total                      8.712ns (6.292ns logic, 2.420ns route)
+                                       (72.2% logic, 27.8% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'mainClk'
+  Total number of paths / destination ports: 33 / 33
+-------------------------------------------------------------------------
+Offset:              5.004ns (Levels of Logic = 3)
+  Source:            reset (PAD)
+  Destination:       XLXI_1/SDC_0 (FF)
+  Destination Clock: mainClk rising
+
+  Data Path: reset to XLXI_1/SDC_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            40   1.218   1.265  reset_IBUF (reset_IBUF)
+     begin scope: 'XLXI_1'
+     INV:I->O             32   0.704   1.262  RST_inv1_INV_0 (RST_inv)
+     FDE:CE                    0.555          SDC_0
+    ----------------------------------------
+    Total                      5.004ns (2.477ns logic, 2.527ns route)
+                                       (49.5% logic, 50.5% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'mainClk'
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Offset:              4.310ns (Levels of Logic = 2)
+  Source:            XLXI_3/q_24 (FF)
+  Destination:       monClk (PAD)
+  Source Clock:      mainClk rising
+
+  Data Path: XLXI_3/q_24 to monClk
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q              2   0.591   0.447  q_24 (y)
+     end scope: 'XLXI_3'
+     OBUF:I->O                 3.272          monClk_OBUF (monClk)
+    ----------------------------------------
+    Total                      4.310ns (3.863ns logic, 0.447ns route)
+                                       (89.6% logic, 10.4% route)
+
+=========================================================================
+CPU : 6.81 / 8.25 s | Elapsed : 7.00 / 8.00 s
+ 
+--> 
+
+Total memory usage is 236748 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :  111 (   0 filtered)
+Number of infos    :    3 (   0 filtered)
+

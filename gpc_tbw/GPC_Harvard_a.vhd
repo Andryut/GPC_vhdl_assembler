@@ -3,7 +3,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 use ieee.numeric_std.all;
 
 entity GPC_Hvd_a is
-    GENERIC(N:integer:=4);
+    GENERIC(N:integer:=8);
     Port ( clk      : in  STD_LOGIC;
            rst      : in  STD_LOGIC;
 			  enter	  : in  STD_LOGIC;
@@ -29,6 +29,34 @@ type rom_mem_type is array (natural range 0 to 63) of std_logic_vector (11 downt
 signal ROM : rom_mem_type:=
 (
 --your_program_comes_here
+0 => X"400",
+1 => X"100",
+2 => X"400",
+3 => X"101",
+4 => X"000",
+5 => X"301",
+6 => X"70B",
+7 => X"000",
+8 => X"301",
+9 => X"102",
+10 => X"A0E",
+11 => X"000",
+12 => X"201",
+13 => X"102",
+14 => X"001",
+15 => X"717",
+16 => X"000",
+17 => X"202",
+18 => X"100",
+19 => X"001",
+20 => X"303",
+21 => X"101",
+22 => X"A0E",
+23 => X"002",
+24 => X"500",
+25 => X"000",
+26 => X"500",
+27 => X"B00",
 others => x"000"
 );
 		
@@ -36,7 +64,8 @@ type ram_mem_type is array (natural range 0 to 63) of std_logic_vector (N-1 down
 signal RAM : ram_mem_type:=
 (
 --your_variable_initializations_comes_here
-others => X"0"
+3 => X"01",
+others => X"00"
 );
 
 begin
@@ -105,10 +134,10 @@ begin
 					end if;										
 				--outA
 				when outA =>
-          outFlags<=std_logic_vector(aux_outFlags);				
+					outFlags<=std_logic_vector(aux_outFlags);				
 					Dout <= std_logic_vector(A);
 					if enter = '1' then 
-					  outFlags<=(others=>'0');
+						outFlags<=(others=>'0');
 						Dout <=(others => '0');
 						aux_outFlags<=SHIFT_LEFT (aux_outFlags,1);					
 						state<=fetch;
@@ -141,7 +170,7 @@ begin
 				when jmp =>
 					PC<=IR(5 downto 0);
 					state<=fetch;
-	      --halt
+				--halt
 				when halt =>
 					done<='1';
 				when others => NULL;

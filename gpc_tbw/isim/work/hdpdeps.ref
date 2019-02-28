@@ -1,0 +1,19 @@
+V3 9
+FL C:/Users/Andre/Desktop/carpeta_arquitectura/Assembler_arch/gpc_tbw/GPC_Harvard_a.vhd 2019/02/25.22:45:58 J.36
+EN work/GPC_Hvd_a 1551152911 \
+      FL C:/Users/Andre/Desktop/carpeta_arquitectura/Assembler_arch/gpc_tbw/GPC_Harvard_a.vhd \
+      PB ieee/std_logic_1164 1179176983 PB ieee/NUMERIC_STD 1179176997
+AR work/GPC_Hvd_a/Behavioral 1551152912 \
+      FL C:/Users/Andre/Desktop/carpeta_arquitectura/Assembler_arch/gpc_tbw/GPC_Harvard_a.vhd \
+      EN work/GPC_Hvd_a 1551152911
+FL C:/Users/Andre/Desktop/carpeta_arquitectura/Assembler_arch/gpc_tbw/test.vhw 2019/02/25.22:48:21 J.36
+EN work/test 1551152913 \
+      FL C:/Users/Andre/Desktop/carpeta_arquitectura/Assembler_arch/gpc_tbw/test.vhw \
+      PB ieee/std_logic_1164 1179176983 PB ieee/NUMERIC_STD 1179176997 \
+      PB ieee/STD_LOGIC_TEXTIO 1179176993 PB ieee/std_logic_arith 1179176985 \
+      PB ieee/STD_LOGIC_UNSIGNED 1179176991 PB std/textio 1179176969
+AR work/test/testbench_arch 1551152914 \
+      FL C:/Users/Andre/Desktop/carpeta_arquitectura/Assembler_arch/gpc_tbw/test.vhw \
+      EN work/test 1551152913 CP GPC_Hvd_a
+FL C:/Users/Andre/Documents/Arquitectura/gpc_tbw/GPC_Harvard_a.vhd 2019/02/21.15:34:23 J.36
+FL C:/Users/Andre/Documents/Arquitectura/gpc_tbw/test.vhw 2019/02/21.15:54:01 J.36

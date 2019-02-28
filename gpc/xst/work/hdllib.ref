@@ -1,0 +1,4 @@
+AR schematic behavioral C:/Users/Andre/Desktop/carpeta_arquitectura/Assembler_arch/gpc/schematic.vhf sub00/vhpl03 1551371706
+AR gpc_hvd_a behavioral C:/Users/Andre/Desktop/carpeta_arquitectura/Assembler_arch/gpc/GPC_Harvard_a.vhd sub00/vhpl01 1551371704
+EN gpc_hvd_a NULL C:/Users/Andre/Desktop/carpeta_arquitectura/Assembler_arch/gpc/GPC_Harvard_a.vhd sub00/vhpl00 1551371703
+EN schematic NULL C:/Users/Andre/Desktop/carpeta_arquitectura/Assembler_arch/gpc/schematic.vhf sub00/vhpl02 1551371705

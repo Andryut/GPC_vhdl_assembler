@@ -1,0 +1,4 @@
+AR gpc_hvd_a behavioral C:/Users/Andre/Desktop/carpeta_arquitectura/Assembler_arch/gpc_tbw/GPC_Harvard_a.vhd sub00/vhpl01 1551152912
+EN gpc_hvd_a NULL C:/Users/Andre/Desktop/carpeta_arquitectura/Assembler_arch/gpc_tbw/GPC_Harvard_a.vhd sub00/vhpl00 1551152911
+AR test testbench_arch C:/Users/Andre/Desktop/carpeta_arquitectura/Assembler_arch/gpc_tbw/test.vhw sub00/vhpl03 1551152914
+EN test NULL C:/Users/Andre/Desktop/carpeta_arquitectura/Assembler_arch/gpc_tbw/test.vhw sub00/vhpl02 1551152913

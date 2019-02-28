@@ -63,7 +63,7 @@ void writeRam(ofstream *file, map<string,pair<bitset<6>,int>> *variables){
     	if((it->second).second != 0) {
     		init_value.str("");
     		init_value << hex << uppercase << bitset<4>((it->second).second).to_ulong();
-        	(*file) << i << " => X\"" << init_value.str() << "\",\n";
+        	(*file) << (it->second).first.to_ulong() << " => X\"" << init_value.str() << "\",\n";
         }
 		it++;
     }
@@ -102,6 +102,56 @@ void writeProgram(string fileName, map<string,pair<bitset<6>,int>> *variables, m
     writeRam(&file, variables);
     file << "\n.code\n";
     writeRom(&file, variables, references, instructions);
+    file.close();
+}
+
+void writeArduinoRam(ofstream *file, map<string,pair<bitset<6>,int>> *variables){
+    map<string,pair<bitset<6>,int>>::iterator it = (*variables).begin();
+    stringstream init_value;
+    (*file) << "short ram[64] = {\n";
+    for(int i = 0; i < variables_number; i++){
+    	if((it->second).second != 0) {
+    		init_value.str("");
+    		init_value << hex << uppercase << bitset<4>((it->second).second).to_ulong();
+        	(*file) << "0x" << init_value.str() << ((i == variables_number - 1) ? "" : ",") << "\n";
+        } else {
+            (*file) << "0x0" << ((i == variables_number - 1) ? "" : ",") << + "\n";
+        }
+		it++;
+    }
+    (*file) << "};\n";
+}
+
+void writeArduinoRom(ofstream *file, map<string,pair<bitset<6>,int>> *variables, map<string, bitset<6>> *references, vector<pair<string,string>> *instructions){
+    string binary_option;
+    bitset<8> operand;
+    stringstream operand_stream;
+    (*file) << "short rom[64] = {\n";
+    for(int i = 0; i < (*instructions).size(); i++){
+    	operand_stream.str("");
+        if((*instructions)[i].first[0] == 'j' || (*instructions)[i].first[0] == 'h'){
+            binary_option = binaryRomInstructions[(*instructions)[i].first];
+            operand = (*instructions)[i].second != "" ? bitset<8>((*references)[(*instructions)[i].second].to_ulong()) : bitset<8>();
+        }else{
+            binary_option = binaryRamInstructions[(*instructions)[i].first];
+            operand = (*instructions)[i].second != "" ? bitset<8>((*variables)[(*instructions)[i].second].first.to_ulong()): bitset<8>();
+        }
+        operand_stream << hex << uppercase << operand.to_ulong();
+        (*file) << "0x" << binary_option << ((operand.to_ulong() < 16) ? "0" : "") << operand_stream.str() << ((i == (*instructions).size() - 1) ? "" : ",") << "\n";
+    }
+    (*file) << "};\n";
+}
+
+void writeArduinoProgram(string fileName, map<string,pair<bitset<6>,int>> *variables, map<string, bitset<6>> *references, vector<pair<string,string>> *instructions) {
+    ofstream file;
+    stringstream sstream(fileName);
+    string aux;
+    getline(sstream, aux, '.');
+    file.open(aux + ".asr");
+    writeArduinoRom(&file, variables, references, instructions);
+    writeArduinoRam(&file, variables);
+    file << "byte instructions = " << (*instructions).size() << ";\n";
+    file << "byte variables = " << variables_number << ";\n";
     file.close();
 }
 
@@ -151,7 +201,16 @@ int main(int argc, char** argv) {
             }else{
                 cout << "there is no .code section\n";
             }
-            writeProgram(fileName, &variables, &references, &instructions);
+            if(!argv[2]){
+                writeProgram(fileName, &variables, &references, &instructions);
+            }else{
+                if(/*argv[2] == "arduino"*/true) {
+                    writeArduinoProgram(fileName, &variables, &references, &instructions);
+                } else {
+                    cout << "there is no second argument like " << argv[2] << "\n";
+                    cout << "Try with \'arduino\' as a second command or nothing to assemble for vhdl by default\n";
+                }
+			}
             cout << "done\n";
         }else{
             cout << "there is no .data section\n";

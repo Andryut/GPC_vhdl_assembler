@@ -1,0 +1,11 @@
+[Inputs]
+clk
+rst
+enter
+=Din[3:0]=
+[Outputs]
+done
+=Dout[3:0]=
+=inFlags[7:0]=
+=outFlags[7:0]=
+[BiDir]

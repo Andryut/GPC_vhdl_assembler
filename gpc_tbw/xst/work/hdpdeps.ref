@@ -1,0 +1,9 @@
+V3 4
+FL C:/Users/Andre/Desktop/carpeta_arquitectura/Assembler_arch/gpc_tbw/GPC_Harvard_a.vhd 2019/02/25.22:45:58 J.36
+EN work/GPC_Hvd_a 1551371202 \
+      FL C:/Users/Andre/Desktop/carpeta_arquitectura/Assembler_arch/gpc_tbw/GPC_Harvard_a.vhd \
+      PB ieee/std_logic_1164 1177545575 PH ieee/NUMERIC_STD 1177545583
+AR work/GPC_Hvd_a/Behavioral 1551371203 \
+      FL C:/Users/Andre/Desktop/carpeta_arquitectura/Assembler_arch/gpc_tbw/GPC_Harvard_a.vhd \
+      EN work/GPC_Hvd_a 1551371202
+FL C:/Users/Andre/Documents/Arquitectura/gpc_tbw/GPC_Harvard_a.vhd 2019/02/21.15:34:23 J.36

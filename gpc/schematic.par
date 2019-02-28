@@ -1,0 +1,200 @@
+Release 9.2i par J.36
+Copyright (c) 1995-2007 Xilinx, Inc.  All rights reserved.
+
+DESKTOP-30Q9S5A::  Thu Feb 28 11:35:37 2019
+
+par -w -intstyle ise -ol std -t 1 schematic_map.ncd schematic.ncd schematic.pcf
+ 
+
+
+Constraints file: schematic.pcf.
+Loading device for application Rf_Device from file '3s250e.nph' in environment C:\Xilinx92i.
+   "schematic" is an NCD, version 3.1, device xc3s250e, package vq100, speed -4
+
+Initializing temperature to 85.000 Celsius. (default - Range: -40.000 to 100.000 Celsius)
+Initializing voltage to 1.140 Volts. (default - Range: 1.140 to 1.320 Volts)
+
+
+Device speed data version:  "PRODUCTION 1.26 2007-04-13".
+
+
+Design Summary Report:
+
+ Number of External IOBs                          24 out of 66     36%
+
+   Number of External Input IOBs                  2
+
+      Number of External Input IBUFs              2
+        Number of LOCed External Input IBUFs      1 out of 2      50%
+
+
+   Number of External Output IOBs                22
+
+      Number of External Output IOBs             22
+
+   Number of External Bidir IOBs                  0
+
+
+   Number of BUFGMUXs                        1 out of 24      4%
+   Number of Slices                         13 out of 2448    1%
+      Number of SLICEMs                      0 out of 1224    0%
+
+
+
+Overall effort level (-ol):   Standard 
+Placer effort level (-pl):    High 
+Placer cost table entry (-t): 1
+Router effort level (-rl):    Standard 
+
+Starting initial Timing Analysis.  REAL time: 3 secs 
+Finished initial Timing Analysis.  REAL time: 3 secs 
+
+
+Starting Placer
+
+Phase 1.1
+Phase 1.1 (Checksum:9896e7) REAL time: 5 secs 
+
+Phase 2.7
+Phase 2.7 (Checksum:1312cfe) REAL time: 5 secs 
+
+Phase 3.31
+Phase 3.31 (Checksum:1c9c37d) REAL time: 5 secs 
+
+Phase 4.2
+
+Phase 4.2 (Checksum:26259fc) REAL time: 6 secs 
+
+Phase 5.30
+Phase 5.30 (Checksum:2faf07b) REAL time: 6 secs 
+
+Phase 6.3
+Phase 6.3 (Checksum:39386fa) REAL time: 6 secs 
+
+Phase 7.5
+Phase 7.5 (Checksum:42c1d79) REAL time: 6 secs 
+
+Phase 8.8
+.
+.
+.
+Phase 8.8 (Checksum:98a417) REAL time: 8 secs 
+
+Phase 9.5
+Phase 9.5 (Checksum:55d4a77) REAL time: 8 secs 
+
+Phase 10.18
+Phase 10.18 (Checksum:5f5e0f6) REAL time: 8 secs 
+
+Phase 11.5
+Phase 11.5 (Checksum:68e7775) REAL time: 8 secs 
+
+REAL time consumed by placer: 8 secs 
+CPU  time consumed by placer: 3 secs 
+Writing design to file schematic.ncd
+
+
+Total REAL time to Placer completion: 8 secs 
+Total CPU time to Placer completion: 3 secs 
+
+Starting Router
+
+Phase 1: 88 unrouted;       REAL time: 10 secs 
+
+Phase 2: 73 unrouted;       REAL time: 10 secs 
+
+Phase 3: 3 unrouted;       REAL time: 10 secs 
+
+Phase 4: 3 unrouted; (0)      REAL time: 10 secs 
+
+Phase 5: 3 unrouted; (0)      REAL time: 10 secs 
+
+Phase 6: 3 unrouted; (0)      REAL time: 10 secs 
+
+Phase 7: 0 unrouted; (0)      REAL time: 10 secs 
+
+Phase 8: 0 unrouted; (0)      REAL time: 10 secs 
+
+
+Total REAL time to Router completion: 10 secs 
+Total CPU time to Router completion: 4 secs 
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+Generating "PAR" statistics.
+
+**************************
+Generating Clock Report
+**************************
+
++---------------------+--------------+------+------+------------+-------------+
+|        Clock Net    |   Resource   |Locked|Fanout|Net Skew(ns)|Max Delay(ns)|
++---------------------+--------------+------+------+------------+-------------+
+|       mainClk_BUFGP | BUFGMUX_X2Y10| No   |   13 |  0.009     |  0.097      |
++---------------------+--------------+------+------+------------+-------------+
+
+* Net Skew is the difference between the minimum and maximum routing
+only delays for the net. Note this is different from Clock Skew which
+is reported in TRCE timing report. Clock Skew is the difference between
+the minimum and maximum path delays which includes logic delays.
+
+
+   The Delay Summary Report
+
+
+The NUMBER OF SIGNALS NOT COMPLETELY ROUTED for this design is: 0
+
+   The AVERAGE CONNECTION DELAY for this design is:        0.505
+   The MAXIMUM PIN DELAY IS:                               1.885
+   The AVERAGE CONNECTION DELAY on the 10 WORST NETS is:   0.700
+
+   Listing Pin Delays by value: (nsec)
+
+    d < 1.00   < d < 2.00  < d < 3.00  < d < 4.00  < d < 5.00  d >= 5.00
+   ---------   ---------   ---------   ---------   ---------   ---------
+          54          11           0           0           0           0
+
+Timing Score: 0
+
+Asterisk (*) preceding a constraint indicates it was not met.
+   This may be due to a setup or hold violation.
+
+------------------------------------------------------------------------------------------------------
+  Constraint                                |  Check  | Worst Case |  Best Case | Timing |   Timing   
+                                            |         |    Slack   | Achievable | Errors |    Score   
+------------------------------------------------------------------------------------------------------
+  NET "mainClk_BUFGP/IBUFG" PERIOD = 31.25  | SETUP   |    26.818ns|     4.432ns|       0|           0
+  ns HIGH 50%                               | HOLD    |     1.387ns|            |       0|           0
+------------------------------------------------------------------------------------------------------
+
+
+All constraints were met.
+
+
+Generating Pad Report.
+
+All signals are completely routed.
+
+Total REAL time to PAR completion: 11 secs 
+Total CPU time to PAR completion: 5 secs 
+
+Peak Memory Usage:  182 MB
+
+Placement: Completed - No errors found.
+Routing: Completed - No errors found.
+Timing: Completed - No errors found.
+
+Number of error messages: 0
+Number of warning messages: 0
+Number of info messages: 0
+
+Writing design to file schematic.ncd
+
+
+
+PAR done!

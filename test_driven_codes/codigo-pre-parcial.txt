@@ -1,0 +1,40 @@
+.data
+X
+Y
+Z
+uno 1
+
+.references
+else 11
+endif 14
+endwhile 23
+
+.code
+inA
+storeA X
+inA
+storeA Y
+loadA X
+subA Y
+jneg else
+loadA X
+subA Y
+storeA Z
+jmp endif
+loadA X
+addA Y
+storeA Z
+loadA Y
+jneg endwhile
+loadA X
+addA Z
+storeA X
+loadA Y
+subA uno
+storeA Y
+jmp endif
+loadA Z
+outA
+loadA X
+outA
+halt

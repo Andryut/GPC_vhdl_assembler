@@ -1,0 +1,4 @@
+AR gpc_hvd_a behavioral C:/Users/Andre/Documents/Arquitectura/gpc/GPC_Harvard_a.vhd sub00/vhpl01 1550768968
+EN gpc_hvd_a NULL C:/Users/Andre/Documents/Arquitectura/gpc/GPC_Harvard_a.vhd sub00/vhpl00 1550768967
+AR test testbench_arch C:/Users/Andre/Documents/Arquitectura/gpc/test.vhw sub00/vhpl03 1550768970
+EN test NULL C:/Users/Andre/Documents/Arquitectura/gpc/test.vhw sub00/vhpl02 1550768969

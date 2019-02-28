@@ -1,0 +1,11 @@
+input x;
+input y;
+if(x>=y) z = x-y;
+else z = x+y;
+while(y>=0){
+  x = x+z;
+  y = y-1;
+}
+output z;
+output x;
+end
